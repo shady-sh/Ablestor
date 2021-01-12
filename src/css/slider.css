@@ -1,0 +1,19 @@
+.slick-prev::before,
+.slick-next:before {
+    color: rgb(36, 36, 36);
+}
+
+.slick-prev {
+    left: 10% !important;
+    z-index: 1;
+}
+
+.slick-next {
+    right: 10% !important;
+    z-index: 1;
+}
+
+.slick-slide {
+    background-image: url("../Images/001.jpg");
+    height: 450px;
+}

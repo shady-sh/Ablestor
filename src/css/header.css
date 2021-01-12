@@ -1,11 +1,11 @@
 @media screen and (min-width: 1600px) {
-    .card-group {
-        left: 11%;
+    .cardgroup {
+        left: 12% !important;
     }
-}
-
-body {
-    margin: 0;
+    .infgroup {
+        position: relative;
+        left: 10% !important;
+    }
 }
 
 a {

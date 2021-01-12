@@ -49,33 +49,35 @@ class Footer extends Component {
         return (
             <footer className="ftr">
                 <CardGroup>
-                    <div className="row">
-                        <a href="/">
-                            <img
-                                alt=""
-                                src="https://www.ablestor.com/public/image/logo_white.png"
-                                />
-                        </a>
-                        <div className="textbox">
-                            <p className="link">
-                                {listItems}
-                            </p>
-                            <p>
-                                <b>회사명</b><span>(주)에이블스토어</span>
-                                <b>주소</b><span>서울특별시 영등포구 영신로 220 KnK디지털타워 1808호</span>
-                            </p>
-                            <p>
-                                <b>사업자 등록번호</b><span>206-86-20608</span>
-                                <b>대표</b><span>권민길</span>
-                                <b>전화</b><span>02-456-7667</span>
-                                <b>팩스</b><span>02-456-7262</span>
-                            </p>
-                            <p>
-                                <b>통신판매업신고번호</b><span>제2011-서울영등포-0761</span>
-                                <span>Copyright (주)에이블스토어. All Rights Reserved.</span>
-                            </p>
+                    <CardGroup className="cardgroup">
+                        <div className="row">
+                            <a href="/">
+                                <img
+                                    alt=""
+                                    src="https://www.ablestor.com/public/image/logo_white.png"
+                                    />
+                            </a>
+                            <div className="textbox">
+                                <p className="link">
+                                    {listItems}
+                                </p>
+                                <p>
+                                    <b>회사명</b><span>(주)에이블스토어</span>
+                                    <b>주소</b><span>서울특별시 영등포구 영신로 220 KnK디지털타워 1808호</span>
+                                </p>
+                                <p>
+                                    <b>사업자 등록번호</b><span>206-86-20608</span>
+                                    <b>대표</b><span>권민길</span>
+                                    <b>전화</b><span>02-456-7667</span>
+                                    <b>팩스</b><span>02-456-7262</span>
+                                </p>
+                                <p>
+                                    <b>통신판매업신고번호</b><span>제2011-서울영등포-0761</span>
+                                    <span>Copyright (주)에이블스토어. All Rights Reserved.</span>
+                                </p>
+                            </div>
                         </div>
-                    </div>
+                    </CardGroup>
                 </CardGroup>
             </footer>
         );
