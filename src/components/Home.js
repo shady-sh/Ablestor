@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import Ableheader from '../components/Able-header';
+import Header from '../components/Header';
 import Slider from '../components/Slider';
 import { Card, CardGroup, Button } from 'react-bootstrap';
 import cardimg from '../kao.JPG'
@@ -10,7 +10,7 @@ class Home extends Component {
     render() {
         return (
             <div>
-                <Ableheader/>
+                <Header/>
                 <Slider/>
                 <CardGroup style={{ marginTop: "3%", marginBottom: "3%"}}>
                     <Card.Img style={{ width: "257px", marginLeft: "210px"}} variant="top" src={cardimg} />

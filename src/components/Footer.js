@@ -31,19 +31,19 @@ class Footer extends Component {
         ]
         const listItems = linkList.map(number => 
             <a
-                id="colorstext"
+                className="colorstext"
                 key={number.id}
                 href={number.src}
-                onMouseEnter={() => {
-                    let color = '#FF3636';
-                    let el = document.getElementById('colorstext');
-                    el.style.color = color;
-                }}
-                onMouseLeave={() => {
-                    let white = '#FFFFFF';
-                    let el = document.getElementById('colorstext');
-                    el.style.color = white;
-                }}
+                // onMouseEnter={() => {
+                //     let color = '#FF3636';
+                //     let el = document.getElementById('colorstext');
+                //     el.style.color = color;
+                // }}
+                // onMouseLeave={() => {
+                //     let white = '#FFFFFF';
+                //     let el = document.getElementById('colorstext');
+                //     el.style.color = white;
+                // }}
             >{number.name}</a>
         )
         return (

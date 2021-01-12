@@ -29,3 +29,7 @@
     margin-left: 14rem;
     margin-top: 2rem;
 }
+
+.colorstext:hover {
+    color: #FF3636;
+}

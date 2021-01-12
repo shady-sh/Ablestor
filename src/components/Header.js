@@ -3,7 +3,7 @@ import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import 'normalize.css'
 import '../css/header.css'
 
-class Ableheader extends Component {
+class Header extends Component {
     constructor(props) {
         super(props);
         this.state = { isOpen: false}
@@ -108,4 +108,4 @@ class Ableheader extends Component {
     }
 }
 
-export default Ableheader;
+export default Header;
