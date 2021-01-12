@@ -14,7 +14,7 @@ export default class SlickSlider extends Component {
             this.setState( {slideImage: 'slide' + e})
         }
         const settings = {
-            autoplay: false,
+            autoplay: true,
             dots: true,
             infinite: true,
             arrows: true,
