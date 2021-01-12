@@ -1,7 +1,6 @@
 import { Component } from 'react';
 import Header from '../components/Header';
-// import Slides from '../components/Slider';
-import SlickSlider from '../components/slider2';
+import SlickSlider from '../components/Slider';
 import { Card, CardGroup, Button } from 'react-bootstrap';
 import cardimg from '../kao.JPG'
 import CafeMove from '../cafe_move.JPG'

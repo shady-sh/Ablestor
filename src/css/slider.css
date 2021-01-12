@@ -16,8 +16,24 @@
 .slick-slide {
     height: 500px;
 }
-.slide1 {
+
+.slide0 {
     background-image: url("../Images/001.png");
+}
+.slide1 {
+    background-image: url("../Images/002.png");
+}
+.slide2 {
+    background-image: url("../Images/003.png");
+}
+.slide3 {
+    background-image: url("../Images/004.png");
+}
+.slide4 {
+    background-image: url("../Images/005.png");
+}
+.slide5 {
+    background-image: url("../Images/006.png");
 }
 
 .item1style {
