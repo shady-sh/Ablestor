@@ -7,7 +7,7 @@ import cardimg from '../kao.JPG'
 import CafeMove from '../cafe_move.JPG'
 import Footer from '../components/Footer'
 
-class Home extends Component {
+export default class Home extends Component {
     render() {
         return (
             <div>
@@ -166,10 +166,10 @@ class Home extends Component {
                                 <p>
                                     <span>기업은행, 예금주 : (주)에이블스토어</span>
                                 </p>
-                                <p class="element-group element-group--vertical">
+                                <p>
                                     <span>계좌번호 : <b style={{fontSize: '18px', fontWeight: '700'}}>2007-2009-00</b></span>
                                     <span style={{marginLeft: '30px', marginRight: '30px'}}>E-Mail : sales@ablestor.com</span>
-                                    <img style={{width:'100px'}} class="ibk_logo" src="https://www.ablestor.com/public/image/logo/IBK_logo.png" alt="IBK_logo.png"></img>
+                                    <img style={{width:'100px'}} className="ibk_logo" src="https://www.ablestor.com/public/image/logo/IBK_logo.png" alt="IBK_logo.png"></img>
                                 </p>
                             </Card.Body>
                             <Card.Body style={{marginTop: '60px', marginLeft: '50px'}}>
@@ -185,5 +185,3 @@ class Home extends Component {
         );
     }
 }
-
-export default Home;

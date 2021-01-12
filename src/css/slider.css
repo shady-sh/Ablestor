@@ -1,19 +1,54 @@
 .slick-prev::before,
 .slick-next:before {
-    color: rgb(36, 36, 36);
+    color: black;
 }
 
 .slick-prev {
-    left: 10% !important;
+    left: 5% !important;
     z-index: 1;
 }
 
 .slick-next {
-    right: 10% !important;
+    right: 5% !important;
     z-index: 1;
 }
 
 .slick-slide {
-    background-image: url("../Images/001.jpg");
-    height: 450px;
+    height: 500px;
+}
+.slide1 {
+    background-image: url("../Images/001.png");
+}
+
+.item1style {
+    position: relative;
+    left: 200px;
+    bottom: 0px;
+    color: #333;
+    font-size: 38px;
+    font-weight: 500;
+    z-index: 5;
+}
+
+.slider_cover {
+    position: relative;
+    width: 1024px;
+    height: 100%;
+}
+
+.slider_cover p {
+    line-height: 0.9;
+}
+
+.slider_item {
+    position: relative;
+    width: 1024px;
+    height: 500px;
+    float: left;
+}
+
+.slider_content {
+    position: absolute;
+    padding-left: 0;
+    width: 99999px;
 }
