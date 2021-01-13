@@ -17,7 +17,7 @@ class Header extends Component {
     }
     render() {
         const dropdown_1 = [
-            {id: 1, href:'/', val:'회사소개'},
+            {id: 1, href:'/', val:'회사소개', path: ''},
             {id: 2, href:'/', val:'공지사항'},
             {id: 3, href:'/', val:'뉴스/미디어 소식'},
             {id: 4, href:'/', val:'레퍼런스'},
@@ -55,7 +55,10 @@ class Header extends Component {
             {id: 28, href:'/', val:'로그인'},
         ]
         const listItems_1 = dropdown_1.map((num) => 
-            <NavDropdown.Item key={num.id} href={num.href}>{num.val}</NavDropdown.Item>
+            <NavDropdown.Item key={num.id} href={num.href} onClick={e => { 
+                e.preventDefault();
+                console.log(e);
+            }}>{num.val}</NavDropdown.Item>
         )
         const listItems_2 = dropdown_2.map((num) => 
             <NavDropdown.Item key={num.id} href={num.href}>{num.val}</NavDropdown.Item>
