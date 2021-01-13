@@ -60,7 +60,7 @@ class Header extends Component {
 }
 
 const dropdown_1 = [
-  { id: 1, href: "/", val: "회사소개", path: "" },
+  { id: 1, href: "/Introduce", val: "회사소개" },
   { id: 2, href: "/", val: "공지사항" },
   { id: 3, href: "/", val: "뉴스/미디어 소식" },
   { id: 4, href: "/", val: "레퍼런스" },
@@ -96,14 +96,7 @@ const dropdown_4 = [
 ];
 const dropdown_5 = [{ id: 28, href: "/", val: "로그인" }];
 const listItems_1 = dropdown_1.map((num) => (
-  <NavDropdown.Item
-    key={num.id}
-    href={num.href}
-    onClick={(e) => {
-      e.preventDefault();
-      console.log(e);
-    }}
-  >
+  <NavDropdown.Item key={num.id} href={num.href}>
     {num.val}
   </NavDropdown.Item>
 ));
