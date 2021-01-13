@@ -7,7 +7,7 @@ export default class Footer extends Component {
     return (
       <footer className="ftr">
         <CardGroup>
-          <CardGroup className="cardgroup">
+          <CardGroup className="cardgroup-2">
             <div className="row">
               <a href="/">
                 <img
@@ -52,7 +52,7 @@ export default class Footer extends Component {
 const linkList = [
   {
     id: "1",
-    src: "https://www.ablestor.com/ablestor/introduce",
+    src: "/introduce",
     name: "회사소개",
   },
   {
