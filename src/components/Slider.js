@@ -14,7 +14,7 @@ export default class SlickSlider extends Component {
             this.setState( {slideImage: 'slide' + e})
         }
         const settings = {
-            autoplay: true,
+            autoplay: false,
             dots: true,
             infinite: true,
             arrows: true,
@@ -96,7 +96,18 @@ export default class SlickSlider extends Component {
                         </CardGroup>
                     </div>
                     <div>
-                        <h3>6</h3>
+                        <CardGroup className="slider_cover">
+                            <CardGroup className="cardgroup">
+                                <li style={{marginLeft: '300px', marginTop: '110px'}}>
+                                    <p style={{color: '#fff', fontSize: '18px', fontWeight: '400', zIndex: '5'}}>대규모 기업을 위한 강력 추천!</p>
+                                    <p style={{color: '#fff', fontSize: '18px', fontWeight: '400', zIndex: '5'}}>가상화, 데이터 집중 응용 프로그램 및 지속적인 서비스를 위해</p>
+                                    <p style={{color: '#fff', fontSize: '18px', fontWeight: '400', zIndex: '5'}}>설계된 확장성 높은 3U NAS</p>
+                                    <h3 style={{marginTop: '9rem', marginLeft: '40rem', fontSize: '35px', fontWeight: '700'}}>RS4017xs+</h3>
+                                    <a style={{marginLeft: '40rem', color: '#f53f39'}} href="/">자세히 보기></a>
+                                </li>
+                                <img style={{position: 'absolute', left: '16rem', height: '19rem', top: '16rem', zIndex: '10'}} src="https://www.ablestor.com/public/image/slider/RS4017xs+.png" alt="DS1821+"></img>
+                            </CardGroup>
+                        </CardGroup>
                     </div>
                 </Slider>
             </div>
