@@ -1,13 +1,6 @@
-.cardgroup-2 {
-    left: 20% !important;
-}
-
 @media screen and (min-width: 1600px) {
     .cardgroup {
         left: 12% !important;
-    }
-    .cardgroup-2 {
-        left: 24% !important;
     }
     .infgroup {
         position: relative;
