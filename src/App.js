@@ -1,6 +1,7 @@
 import { Component } from "react";
 import Home from "./components/Home";
 import Introduce from "./components/Introduce";
+import Reference from "./components/Reference";
 import { BrowserRouter, Route } from "react-router-dom";
 
 class App extends Component {
@@ -13,6 +14,9 @@ class App extends Component {
           </Route>
           <Route path="/Introduce">
             <Introduce />
+          </Route>
+          <Route path="/Reference">
+            <Reference />
           </Route>
         </BrowserRouter>
       </div>

@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Col, Row } from "react-bootstrap";
+import { Col, Row, Button } from "react-bootstrap";
 import Header from "../components/Header";
 import SlickSlider from "../components/Slider";
 import Footer from "../components/Footer";
@@ -207,6 +207,46 @@ export default class Introduce extends Component {
                           표현하는 것을 기본으로합니다.
                         </p>
                       </div>
+                    </div>
+                  </div>
+                  <div className="brand-palette-wrapper">
+                    <div className="brand-logo-label">
+                      <p>Color Palette</p>
+                    </div>
+                    <div className="brand-swatch-wrapper">
+                      <div className="brand-swatch brand-red">
+                        <div className="brand-swatch-color"></div>
+                        <p>#ed1c24</p>
+                      </div>
+                      <div className="brand-swatch brand-black">
+                        <div className="brand-swatch-color"></div>
+                        <p>#2c2d2d</p>
+                      </div>
+                      <div className="logo-spectrum-section">
+                        <div className="logo-contrast-wrapper">
+                          <div className="logo-white-proposal">
+                            <img
+                              src="https://www.ablestor.com/public/image/company_introduce/able-black.png"
+                              alt="able-black.png"
+                            />
+                          </div>
+                          <div className="logo-black-proposal">
+                            <img
+                              src="https://www.ablestor.com/public/image/company_introduce/able-white.png"
+                              alt="able-white.png"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="brand-buttons">
+                      <Button variant="outline-dark">AI Black 다운로드</Button>
+                      <Button
+                        style={{ marginLeft: "10px" }}
+                        variant="outline-dark"
+                      >
+                        AI White 다운로드
+                      </Button>
                     </div>
                   </div>
                 </Col>
