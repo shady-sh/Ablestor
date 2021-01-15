@@ -13,7 +13,7 @@ const category = [
   { id: 5, name: "종교/사회단체" },
 ];
 
-const eduItems = [];
+let edu_item = [];
 
 export default class Reference extends Component {
   constructor(props) {
@@ -48,19 +48,55 @@ export default class Reference extends Component {
         </a>
       </li>
     ));
-  updateEduItems() {
-    for (let i = 1; i <= 42; i++) {
-      eduItems.push({
+  addEduItem = () => {
+    edu_item = [];
+    for (let i = 1; i <= 44; i++) {
+      edu_item.push({
         id: i,
         Elements: (
-          <Col>
-            <img src="" alt={i}></img>
-          </Col>
+          <img
+            className="img-sizing"
+            src={`/refs/edu_${i}.png`}
+            alt={`edu_${i}`}
+          />
         ),
       });
     }
-    return;
+    return this.list_eduItems();
+  };
+
+  list_eduItems() {
+    return (
+      <Container>
+        <Row>
+          {edu_item.map((Item) => {
+            if (Item.id >= 1 && Item.id <= 7) {
+              return <Col key={Item.id}>{Item.Elements}</Col>;
+            }
+            if (Item.id >= 8 && Item.id <= 14) {
+              return <Col key={Item.id}>{Item.Elements}</Col>;
+            }
+            if (Item.id >= 15 && Item.id <= 21) {
+              return <Col key={Item.id}>{Item.Elements}</Col>;
+            }
+            if (Item.id >= 22 && Item.id <= 28) {
+              return <Col key={Item.id}>{Item.Elements}</Col>;
+            }
+            if (Item.id >= 29 && Item.id <= 35) {
+              return <Col key={Item.id}>{Item.Elements}</Col>;
+            }
+            if (Item.id >= 36 && Item.id <= 42) {
+              return <Col key={Item.id}>{Item.Elements}</Col>;
+            }
+            if (Item.id >= 43 && Item.id <= 49) {
+              return <Col key={Item.id}>{Item.Elements}</Col>;
+            }
+          })}
+        </Row>
+      </Container>
+    );
   }
+
   render() {
     return (
       <div>
@@ -69,22 +105,12 @@ export default class Reference extends Component {
         <div className="page--gap">
           <Container>
             <Row>
-              <Col xs={12}>
+              <Col>
                 <h3>에이블스토어 레퍼런스</h3>
                 <ul className="reference_category">{this.listCategory()}</ul>
                 <br />
                 <br />
-                <Row />
-                <Container>
-                  <Row>
-                    <Col>1{/* {this.updateEduItems()} */}</Col>
-                    <Col>1</Col>
-                    <Col>1</Col>
-                    <Col>1</Col>
-                    <Col>1</Col>
-                    <Col>1</Col>
-                  </Row>
-                </Container>
+                {this.addEduItem()}
               </Col>
             </Row>
           </Container>

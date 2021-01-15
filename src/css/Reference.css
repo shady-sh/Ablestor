@@ -32,3 +32,7 @@ ol, ul, li {
 .category-active:hover {
     color: #f53f39;
 }
+
+.img-sizing {
+    margin-top: 20px;
+}
