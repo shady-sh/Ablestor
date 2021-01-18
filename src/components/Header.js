@@ -1,9 +1,9 @@
 import { Component } from "react";
 import { Nav, Navbar, NavDropdown } from "react-bootstrap";
 import "normalize.css";
-import "../css/header.css";
+import "../css/Header.css";
 
-class Header extends Component {
+export default class Header extends Component {
   constructor(props) {
     super(props);
     this.state = { isOpen: false };
@@ -127,5 +127,3 @@ const dropdown = [
   ],
   [{ id: 28, href: "/", val: "로그인" }],
 ];
-
-export default Header;

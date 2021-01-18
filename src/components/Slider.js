@@ -3,8 +3,7 @@ import { CardGroup, Button } from "react-bootstrap";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "../css/slider.css";
-
+import "../css/Slider.css";
 export default class SlickSlider extends Component {
   constructor(props) {
     super(props);

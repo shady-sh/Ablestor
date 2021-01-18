@@ -1,6 +1,6 @@
 import { Component } from "react";
 import { CardGroup } from "react-bootstrap";
-import "../css/footer.css";
+import "../css/Footer.css";
 
 export default class Footer extends Component {
   render() {
