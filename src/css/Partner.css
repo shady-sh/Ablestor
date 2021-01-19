@@ -28,6 +28,33 @@
 .partner_content {
     width: 32%;
     min-height: 300px;
-    margin: 0 0.5% 2%;
-    border: 1px solid #ebebeb;
+}
+
+.card-image-bg {
+    position: relative;
+    width: 100%;
+    height: 150px;
+    text-align: center;
+    background-color: #ebebeb;
+    line-height: 150px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.partner-image {
+    width: 160px;
+    margin: auto;
+}
+
+.asset-line-gray {
+    background-color: #ccc;
+}
+
+.partner-cardtitle {
+    font-weight: 700;
+}
+
+.partner-cardtext, .partner-cardtitle {
+    letter-spacing: -.01em;
+    font-size: 14px;
 }
