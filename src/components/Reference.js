@@ -50,17 +50,24 @@ export default class Reference extends Component {
     ));
   addEduItem = () => {
     edu_item = [];
-    for (let i = 1; i <= 44; i++) {
-      edu_item.push({
-        id: i,
-        Elements: (
-          <img
-            className="img-sizing"
-            src={`/refs/edu_${i}.png`}
-            alt={`edu_${i}`}
-          />
-        ),
-      });
+    for (let i = 1; i <= 49; i++) {
+      if (i >= 45) {
+        edu_item.push({
+          id: i,
+          Elements: <div></div>,
+        });
+      } else {
+        edu_item.push({
+          id: i,
+          Elements: (
+            <img
+              className="img-sizing"
+              src={`/refs/edu_${i}.png`}
+              alt={`edu_${i}`}
+            />
+          ),
+        });
+      }
     }
     return this.list_eduItems();
   };
