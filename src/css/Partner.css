@@ -1,0 +1,33 @@
+/* .main_body > h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    display: inline;
+} */
+.page--gap .p-header h2 {
+    font-weight: 700;
+    display: inline;
+}
+
+.page--gap {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.page--gap header {
+    border-bottom: 1px solid #ebebeb;
+    padding-bottom: 10px;
+}
+
+.page--gap span {
+    margin-left: 14px;
+}
+
+.partner_wrapper {
+    margin-top: 20px;
+}
+
+.partner_content {
+    width: 32%;
+    min-height: 300px;
+    margin: 0 0.5% 2%;
+    border: 1px solid #ebebeb;
+}

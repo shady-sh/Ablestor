@@ -95,7 +95,7 @@ const dropdown = [
     { id: 2, href: "/", val: "공지사항" },
     { id: 3, href: "/", val: "뉴스/미디어 소식" },
     { id: 4, href: "/Reference", val: "레퍼런스" },
-    { id: 5, href: "/", val: "파트너" },
+    { id: 5, href: "/Partner", val: "파트너" },
     { id: 6, href: "/", val: "프로모션" },
     { id: 7, href: "/", val: "견적/구매 관련 문의" },
   ],
