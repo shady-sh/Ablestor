@@ -24,9 +24,7 @@ export default class Partner extends Component {
               className="partner-image"
               variant="top"
               src={img}
-              onClick={() => {
-                window.open(path_url, "_blank");
-              }}
+              onClick={() => window.open(path_url, "_blank")}
             />
           </Card>
           <Card.Body>
