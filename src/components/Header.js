@@ -125,5 +125,5 @@ const dropdown = [
     { id: 26, href: "/", val: "입고 수리 신청" },
     { id: 27, href: "/", val: "서비스 정책" },
   ],
-  [{ id: 28, href: "/", val: "로그인" }],
+  [{ id: 28, href: "/Login", val: "로그인" }],
 ];
