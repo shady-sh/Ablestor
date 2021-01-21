@@ -166,6 +166,9 @@ h1, h2, h3, h4, h5, h6, p {
 .page--content__information .element-group {
     margin: 0;
 }
+.page--content__information .element-group b {
+    font-size: 18px;
+}
 .page--content__information .ibk_logo {
     width: 100px;
     display: inline-block;

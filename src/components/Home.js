@@ -304,7 +304,11 @@ export default class Home extends Component {
                     />
                   </p>
                 </Col>
-                <Col xs={5}></Col>
+                <Col xs={5}>
+                  <h3>고객 지원 센터</h3>
+                  <p>운영 시간 - [평일 10:00 ~ 17:00] / 토, 일, 공휴일 휴무</p>
+                  <Button variant="outline-danger">지원 페이지 바로가기</Button>
+                </Col>
               </Row>
             </Container>
           </div>
