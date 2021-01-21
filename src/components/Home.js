@@ -1,6 +1,7 @@
 import Header from "../components/Header";
 import Slider from "react-slick";
 import SlickSlider from "../components/Slider";
+import Scroller from "../components/Scroller";
 import Footer from "../components/Footer";
 import "../css/Home.css";
 import { Component } from "react";
@@ -313,6 +314,7 @@ export default class Home extends Component {
             </Container>
           </div>
         </div>
+        <Scroller />
         <Footer />
       </div>
     );

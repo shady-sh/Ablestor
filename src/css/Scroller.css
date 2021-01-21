@@ -1,0 +1,15 @@
+.page--content__site-map {
+    height: 0;
+    padding: 50px 0;
+    background-color: #c2c2c2;
+    overflow: hidden;
+}
+.page--content__site-map .scoll-down {
+    margin-top: -54px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.page--content__site-map p {
+    font-size: 14px;
+}
