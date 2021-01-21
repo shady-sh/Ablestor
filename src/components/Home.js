@@ -18,31 +18,68 @@ const settings = {
   slidesToScroll: 1,
 };
 
+const benefitItems = [
+  {
+    link: "/ablestor/kakao",
+    uri: "https://www.ablestor.com/public/image/Main/icon_kakao.png",
+    appendText: "",
+  },
+  {
+    link: "/ablestor/kakao",
+    uri: "https://www.ablestor.com/public/image/Main/main_icon_01.svg",
+    appendText: "",
+  },
+  {
+    link: "",
+    uri: "",
+    appendText: "",
+  },
+  {
+    link: "",
+    uri: "",
+    appendText: "",
+  },
+];
+
 export default class Home extends Component {
-  createImage = (href, imgSrc) => {
-    return (
-      <li className="item image_item">
-        <a href={href}>
-          <img src={imgSrc} alt="image_icon.png"></img>
-        </a>
-      </li>
-    );
-  };
-  createIcon = (href, imgSrc, title) => {
-    return (
-      <li className="item icon_item">
-        <a href={href}>
-          <img src={imgSrc} alt="list_icon"></img>
-          <span>{title}</span>
-        </a>
-      </li>
-    );
-  };
+  // createImage = (href, imgSrc) => {
+  //   return (
+  //     <li className="item image_item">
+  //       <a href={href}>
+  //         <img src={imgSrc} alt="image_icon.png"></img>
+  //       </a>
+  //     </li>
+  //   );
+  // };
+
+  // createIcon = (href, imgSrc, title) => {
+  //   return (
+  //     <li className="item icon_item">
+  //       <a href={href}>
+  //         <img src={imgSrc} alt="list_icon"></img>
+  //         <span>{title}</span>
+  //       </a>
+  //     </li>
+  //   );
+  // };
+
   itemWrapper = () => {
+    var liJSX = (link, uri, appendText) => (
+      <li className="item image_item">
+        <a href={link}>
+          <img src={uri} alt="image_icon.png"></img>
+          {appendText && <span>{appendText}</span>}
+        </a>
+      </li>
+    );
+
     return (
       <div className="item_wrapper">
         <ul>
-          {this.createImage(
+          {benefitItems.map((item) => {
+            return liJSX(item.link, item.uri);
+          })}
+          {/* {this.createImage(
             `/ablestor/kakao`,
             `https://www.ablestor.com/public/image/Main/icon_kakao.png`
           )}
@@ -60,14 +97,15 @@ export default class Home extends Component {
             `/Reference`,
             `https://www.ablestor.com/public/image/Main/main_icon_03.svg`,
             `ABLE 레퍼런스`
-          )}
+          )} */}
         </ul>
       </div>
     );
   };
+
   promotionDesc = () => {
     return (
-      <div className="promotion-desc">
+      <div className="promotion-desc" contentEditable="true">
         <h3>
           ABLE <b>EVENT</b>
         </h3>
@@ -99,57 +137,58 @@ export default class Home extends Component {
       </Card>
     );
   };
+
   contentSlider = () => {
     return (
       <Slider className="content-slider" {...settings}>
-        <div>
-          <CardGroup>
-            {this.createSlideCard(
-              `https://www.ablestor.com/public/upload/writePromotion/5fc705358d480.png`,
-              `프로모션/이벤트`,
-              `[ABLESTOR] 하트라이브 출연기념! 시놀로지 NAS 판매 이벤트`,
-              `하트라이브!`
-            )}
-            {this.createSlideCard(
-              `https://www.ablestor.com/public/upload/writePromotion/5fc5f21555924.png`,
-              `프로모션/이벤트`,
-              `Synology 2021 online conference`,
-              `시놀로지의 차세대 제품과 솔루션 소개`
-            )}
-          </CardGroup>
-        </div>
-        <div>
-          <CardGroup>
-            {this.createSlideCard(
-              `https://www.ablestor.com/public/upload/writePromotion/5fa50aad952d0.png`,
-              `프로모션/이벤트`,
-              `[ABLESTOR] THE K-DA 데이터 컨퍼런스 2020 & EXPO`,
-              `THE K-DA 데이터 컨퍼런스 2020 & EXPO`
-            )}
-            {this.createSlideCard(
-              `https://www.ablestor.com/public/upload/writePromotion/5f4722a6e85cd.png`,
-              `프로모션/이벤트`,
-              `[ABLESTOR] Synology X 하이마트 온라인 단독 보상판매`,
-              `Synology X 하이마트`
-            )}
-          </CardGroup>
-        </div>
-        <div>
-          <CardGroup>
-            {this.createSlideCard(
-              `https://www.ablestor.com/public/upload/writePromotion/5ee06b60ae129.png`,
-              `프로모션/이벤트`,
-              `에이블스토어 로드쇼 2020 온라인 안내.`,
-              `에이블스토어 로드쇼 2020`
-            )}
-            {this.createSlideCard(
-              `https://www.ablestor.com/public/upload/writePromotion/5ebdf8adb2ff8.png`,
-              `프로모션/이벤트`,
-              `시놀로지 20년도 신제품 출시! 더 빠르고 안정적으로`,
-              `Synology 신제품 출시!`
-            )}
-          </CardGroup>
-        </div>
+        {/* <div> */}
+        <CardGroup>
+          {this.createSlideCard(
+            `https://www.ablestor.com/public/upload/writePromotion/5fc705358d480.png`,
+            `프로모션/이벤트`,
+            `[ABLESTOR] 하트라이브 출연기념! 시놀로지 NAS 판매 이벤트`,
+            `하트라이브!`
+          )}
+          {this.createSlideCard(
+            `https://www.ablestor.com/public/upload/writePromotion/5fc5f21555924.png`,
+            `프로모션/이벤트`,
+            `Synology 2021 online conference`,
+            `시놀로지의 차세대 제품과 솔루션 소개`
+          )}
+        </CardGroup>
+        {/* </div>
+        <div> */}
+        <CardGroup>
+          {this.createSlideCard(
+            `https://www.ablestor.com/public/upload/writePromotion/5fa50aad952d0.png`,
+            `프로모션/이벤트`,
+            `[ABLESTOR] THE K-DA 데이터 컨퍼런스 2020 & EXPO`,
+            `THE K-DA 데이터 컨퍼런스 2020 & EXPO`
+          )}
+          {this.createSlideCard(
+            `https://www.ablestor.com/public/upload/writePromotion/5f4722a6e85cd.png`,
+            `프로모션/이벤트`,
+            `[ABLESTOR] Synology X 하이마트 온라인 단독 보상판매`,
+            `Synology X 하이마트`
+          )}
+        </CardGroup>
+        {/* </div>
+        <div> */}
+        <CardGroup>
+          {this.createSlideCard(
+            `https://www.ablestor.com/public/upload/writePromotion/5ee06b60ae129.png`,
+            `프로모션/이벤트`,
+            `에이블스토어 로드쇼 2020 온라인 안내.`,
+            `에이블스토어 로드쇼 2020`
+          )}
+          {this.createSlideCard(
+            `https://www.ablestor.com/public/upload/writePromotion/5ebdf8adb2ff8.png`,
+            `프로모션/이벤트`,
+            `시놀로지 20년도 신제품 출시! 더 빠르고 안정적으로`,
+            `Synology 신제품 출시!`
+          )}
+        </CardGroup>
+        {/* </div> */}
       </Slider>
     );
   };

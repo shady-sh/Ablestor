@@ -48,6 +48,7 @@ export default class Reference extends Component {
         </a>
       </li>
     ));
+
   addItems = () => {
     items = [];
     if (this.state.selectedContent === 1) {
@@ -70,9 +71,8 @@ export default class Reference extends Component {
           });
         }
       }
-      return this.list_eduItems("Edu");
     } else if (this.state.selectedContent === 2) {
-      for (let i = 3; i <= 60; i++) {
+      for (let i = 3; i <= 59; i++) {
         if (i !== 10) {
           if (i >= 3 && i <= 9) {
             items.push({
@@ -86,7 +86,7 @@ export default class Reference extends Component {
             });
           } else if (i >= 57) {
             items.push({
-              Elements: <div></div>,
+              Elements: <div />,
             });
           } else {
             items.push({
@@ -101,7 +101,6 @@ export default class Reference extends Component {
           }
         }
       }
-      return this.list_eduItems("Company");
     } else if (this.state.selectedContent === 3) {
       for (let i = 1; i <= 35; i++) {
         if (i >= 30) {
@@ -120,7 +119,6 @@ export default class Reference extends Component {
           });
         }
       }
-      return this.list_eduItems("Public");
     } else if (this.state.selectedContent === 4) {
       for (let i = 1; i <= 42; i++) {
         if (i >= 38) {
@@ -139,7 +137,6 @@ export default class Reference extends Component {
           });
         }
       }
-      return this.list_eduItems("Media");
     } else if (this.state.selectedContent === 5) {
       for (let i = 1; i <= 14; i++) {
         if (i >= 10) {
@@ -158,150 +155,45 @@ export default class Reference extends Component {
           });
         }
       }
-      return this.list_eduItems("Social");
     }
+    return this.list_eduItems();
   };
 
-  list_eduItems(type) {
-    if (type === "Edu") {
-      return (
-        <Container>
-          <Row>
-            {items.map((Item) => {
-              if (Item.id >= 1 && Item.id <= 7) {
-                return <Col key={Item.id}>{Item.Elements}</Col>;
-              }
-              if (Item.id >= 8 && Item.id <= 14) {
-                return <Col key={Item.id}>{Item.Elements}</Col>;
-              }
-              if (Item.id >= 15 && Item.id <= 21) {
-                return <Col key={Item.id}>{Item.Elements}</Col>;
-              }
-              if (Item.id >= 22 && Item.id <= 28) {
-                return <Col key={Item.id}>{Item.Elements}</Col>;
-              }
-              if (Item.id >= 29 && Item.id <= 35) {
-                return <Col key={Item.id}>{Item.Elements}</Col>;
-              }
-              if (Item.id >= 36 && Item.id <= 42) {
-                return <Col key={Item.id}>{Item.Elements}</Col>;
-              }
-              if (Item.id >= 43 && Item.id <= 49) {
-                return <Col key={Item.id}>{Item.Elements}</Col>;
-              }
-            })}
-          </Row>
-        </Container>
-      );
-    }
-    if (type === "Company") {
-      return (
-        <Container>
-          <Row>
-            {items.map((Item, idx) => {
-              if (idx >= 0 && idx <= 6) {
-                return <Col key={idx}>{Item.Elements}</Col>;
-              }
-              if (idx >= 7 && idx <= 13) {
-                return <Col key={idx}>{Item.Elements}</Col>;
-              }
-              if (idx >= 14 && idx <= 20) {
-                return <Col key={idx}>{Item.Elements}</Col>;
-              }
-              if (idx >= 21 && idx <= 27) {
-                return <Col key={idx}>{Item.Elements}</Col>;
-              }
-              if (idx >= 28 && idx <= 35) {
-                return <Col key={idx}>{Item.Elements}</Col>;
-              }
-              if (idx >= 35 && idx <= 41) {
-                return <Col key={idx}>{Item.Elements}</Col>;
-              }
-              if (idx >= 42 && idx <= 48) {
-                return <Col key={idx}>{Item.Elements}</Col>;
-              }
-              if (idx >= 49 && idx <= 55) {
-                return <Col key={idx}>{Item.Elements}</Col>;
-              }
-            })}
-          </Row>
-        </Container>
-      );
-    }
-    if (type === "Public") {
-      return (
-        <Container>
-          <Row>
-            {items.map((Item, idx) => {
-              if (idx >= 0 && idx <= 6) {
-                return <Col key={idx}>{Item.Elements}</Col>;
-              }
-              if (idx >= 7 && idx <= 13) {
-                return <Col key={idx}>{Item.Elements}</Col>;
-              }
-              if (idx >= 14 && idx <= 20) {
-                return <Col key={idx}>{Item.Elements}</Col>;
-              }
-              if (idx >= 21 && idx <= 27) {
-                return <Col key={idx}>{Item.Elements}</Col>;
-              }
-              if (idx >= 28 && idx <= 34) {
-                return <Col key={idx}>{Item.Elements}</Col>;
-              }
-            })}
-          </Row>
-        </Container>
-      );
-    }
-    if (type === "Media") {
-      return (
-        <Container>
-          <Row>
-            {items.map((Item, idx) => {
-              if (idx >= 0 && idx <= 6) {
-                return <Col key={idx}>{Item.Elements}</Col>;
-              }
-              if (idx >= 7 && idx <= 13) {
-                return <Col key={idx}>{Item.Elements}</Col>;
-              }
-              if (idx >= 14 && idx <= 20) {
-                return <Col key={idx}>{Item.Elements}</Col>;
-              }
-              if (idx >= 21 && idx <= 27) {
-                return <Col key={idx}>{Item.Elements}</Col>;
-              }
-              if (idx >= 28 && idx <= 34) {
-                return <Col key={idx}>{Item.Elements}</Col>;
-              }
-              if (idx >= 35 && idx <= 42) {
-                return <Col key={idx}>{Item.Elements}</Col>;
-              }
-            })}
-          </Row>
-        </Container>
-      );
-    }
-    if (type === "Social") {
-      return (
-        <Container>
-          <Row>
-            {items.map((Item, idx) => {
-              if (idx >= 0 && idx <= 6) {
-                return <Col key={idx}>{Item.Elements}</Col>;
-              }
-              if (idx >= 7 && idx <= 13) {
-                return <Col key={idx}>{Item.Elements}</Col>;
-              }
-            })}
-          </Row>
-        </Container>
-      );
-    }
+  list_eduItems() {
+    return (
+      <Container>
+        <Row>
+          {items.map((Item, idx) => (
+            <Col key={idx}>{Item.Elements}</Col>
+          ))}
+        </Row>
+      </Container>
+    );
   }
 
   render() {
+    var items = [];
+    for (let index = 0; index < 44; index++) {
+      items[index] = index;
+    }
+
+    var jsxStr = "";
+    {
+      <div>col</div>;
+    }
+
     return (
       <div>
+        {/* {items.map((number) => {
+          return (
+            <div>
+              
+              {number % 7 === 0 && <div>row</div>}
+
+              
+            </div>
+          );
+        })} */}
         <Header />
         <SlickSlider />
         <div className="page--gap">

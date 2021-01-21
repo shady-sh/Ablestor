@@ -36,6 +36,7 @@ ol, ul, li {
 .img-sizing {
     transform: scale(1,1);
     margin-top: 20px;
+    transition: 0.2s;
 }
 
 .img-sizing:hover {

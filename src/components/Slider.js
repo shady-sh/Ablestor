@@ -4,6 +4,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../css/Slider.css";
+
 export default class SlickSlider extends Component {
   constructor(props) {
     super(props);
@@ -21,9 +22,11 @@ export default class SlickSlider extends Component {
       afterChange: this.getNextPage,
     };
   }
+
   getNextPage = (number) => {
     this.setState({ slideImage: `slide${number}` });
   };
+
   render() {
     return (
       <div className="Container">

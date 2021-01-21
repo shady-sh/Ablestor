@@ -3,6 +3,11 @@
     padding: 50px 0;
     background-color: #c2c2c2;
     overflow: hidden;
+    transition: 0.7s;
+}
+.active {
+    height: 534.8px;
+    transition: 0.7s;
 }
 .page--content__site-map .scoll-down {
     margin-top: -54px;
@@ -12,4 +17,26 @@
 
 .page--content__site-map p {
     font-size: 14px;
+}
+
+.page--content__site-map .img-repos {
+    position: relative;
+    left: 48%;
+    top: -40px;
+}
+.img-repos img {
+    width: 30px;
+}
+
+.sitemap {
+    width: 100%;
+    height: auto;
+}
+.sitemap h4 {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.content-row ul, .content-row .nav-link {
+    padding: 0;
 }

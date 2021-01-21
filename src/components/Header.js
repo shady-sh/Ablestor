@@ -4,19 +4,6 @@ import "normalize.css";
 import "../css/Header.css";
 
 export default class Header extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { isOpen: false };
-    // this.getItems()
-  }
-  handleOpen = () => {
-    this.setState({ isOpen: true });
-  };
-
-  handleClose = () => {
-    this.setState({ isOpen: false });
-  };
-
   render() {
     return (
       <header>
