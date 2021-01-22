@@ -48,16 +48,14 @@ export default class Scroller extends Component {
     if (this.state.isOpen === false) {
       return (
         <div className="page--content__site-map">
-          <Container>
-            <Row>
-              <Col xs={12}>
-                <p className="scoll-down">
-                  {this.clickImg()}
-                  <span>{` `}마우스 클릭 시 사이트맵이 나옵니다.</span>
-                </p>
-              </Col>
-            </Row>
-          </Container>
+          <Row>
+            <Col xs={12}>
+              <p className="scoll-down">
+                {this.clickImg()}
+                <span>{` `}마우스 클릭 시 사이트맵이 나옵니다.</span>
+              </p>
+            </Col>
+          </Row>
         </div>
       );
     } else {

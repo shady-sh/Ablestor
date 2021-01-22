@@ -61,6 +61,7 @@ export default class Reference extends Component {
           }
         }
       }
+      return "";
     });
     return this.list_eduItems();
   };

@@ -29,11 +29,9 @@ export default class SlickSlider extends Component {
 
   render() {
     return (
-      <div className="Container">
-        <Slider {...this.settings} className={this.state.slideImage}>
-          {listItems}
-        </Slider>
-      </div>
+      <Slider {...this.settings} className={`slider ${this.state.slideImage}`}>
+        {listItems}
+      </Slider>
     );
   }
 }
@@ -293,9 +291,7 @@ const Items = [
   },
 ];
 const listItems = Items.map((Item) => (
-  <div key={Item.id}>
-    <CardGroup className="slider_cover">
-      <CardGroup className="cardgroup">{Item.Elements}</CardGroup>
-    </CardGroup>
-  </div>
+  <CardGroup className="slider_cover">
+    <CardGroup className="cardgroup">{Item.Elements}</CardGroup>
+  </CardGroup>
 ));

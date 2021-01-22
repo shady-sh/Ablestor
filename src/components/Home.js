@@ -269,7 +269,7 @@ export default class Home extends Component {
                   href="https://cafe.naver.com/synologynas"
                   target="_blank"
                   rel="noreferrer"
-                />
+                >{``}</a>
               </Col>
             </Row>
           </div>
