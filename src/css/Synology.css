@@ -1,0 +1,22 @@
+.page--product {
+    transition: background 0.5s;
+}
+.page--product p.center {
+    color: #333;
+    font-weight: normal;
+    font-size: 16px !important;
+}
+.center {
+    text-align: center !important;
+}
+.page--product .made_logo img {
+    width: 180px !important;
+}
+.page--product h4 {
+    color: #333;
+    font-weight: bold !important;
+    font-size: 16px !important;
+}
+.space--top {
+    margin-top: 40px;
+}

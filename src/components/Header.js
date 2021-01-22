@@ -87,7 +87,7 @@ const dropdown = [
     { id: 7, href: "/", val: "견적/구매 관련 문의" },
   ],
   [
-    { id: 8, href: "/", val: "Synology" },
+    { id: 8, href: "/Synology", val: "Synology" },
     { id: 9, href: "/", val: "G-technology" },
     { id: 10, href: "/", val: "Asustor" },
     { id: 11, href: "/", val: "Dahua" },

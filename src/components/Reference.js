@@ -19,19 +19,16 @@ export default class Reference extends Component {
   state = {
     selectedContent: 1,
   };
-  setClassName(id) {
-    if (this.state.selectedContent === id) {
-      return "category-active";
-    } else {
-      return "category";
-    }
-  }
   listCategory = () =>
     category.map((number) => (
       <li key={number.id}>
         <a
           href="/"
-          className={this.setClassName(number.id)}
+          className={
+            this.state.selectedContent === number.id
+              ? "category-active"
+              : "category"
+          }
           onClick={(e) => {
             e.preventDefault();
             this.setState({ selectedContent: number.id });
@@ -47,10 +44,10 @@ export default class Reference extends Component {
       if (this.state.selectedContent === item.id) {
         for (let i = 1; i <= item.maxSize; i++) {
           if (i > item.size) {
-            items.push({ Elements: <div /> });
+            items.push({ elements: <div /> });
           } else {
             items.push({
-              Elements: (
+              elements: (
                 <img
                   className="img-sizing"
                   src={`/refs/${item.file}_${i}.png`}
@@ -69,7 +66,7 @@ export default class Reference extends Component {
     return (
       <Row>
         {items.map((Item, idx) => (
-          <Col key={idx}>{Item.Elements}</Col>
+          <Col key={idx}>{Item.elements}</Col>
         ))}
       </Row>
     );
