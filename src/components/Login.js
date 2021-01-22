@@ -23,7 +23,7 @@ export default class Login extends Component {
               <span className="show">SHOW</span>
             </div>
             <div className="pass">
-              <a href="#">로그인에 문제가 있으신가요?</a>
+              <a href="/">로그인에 문제가 있으신가요?</a>
             </div>
             <div className="field">
               <input type="submit" value="로그인" />
@@ -44,7 +44,7 @@ export default class Login extends Component {
           </div>
           <div className="signup">
             {`계정이 없으신가요? `}
-            <a href="#">회원가입</a>
+            <a href="/">회원가입</a>
           </div>
         </div>
       </div>

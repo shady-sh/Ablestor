@@ -161,13 +161,11 @@ export default class Reference extends Component {
 
   list_eduItems() {
     return (
-      <Container>
-        <Row>
-          {items.map((Item, idx) => (
-            <Col key={idx}>{Item.Elements}</Col>
-          ))}
-        </Row>
-      </Container>
+      <Row>
+        {items.map((Item, idx) => (
+          <Col key={idx}>{Item.Elements}</Col>
+        ))}
+      </Row>
     );
   }
 
@@ -196,19 +194,17 @@ export default class Reference extends Component {
         })} */}
         <Header />
         <SlickSlider />
-        <div className="page--gap">
-          <Container>
-            <Row>
-              <Col>
-                <h3>에이블스토어 레퍼런스</h3>
-                <ul className="reference_category">{this.listCategory()}</ul>
-                <br />
-                <br />
-                {this.addItems()}
-              </Col>
-            </Row>
-          </Container>
-        </div>
+        <Container className="page--gap">
+          <Row>
+            <Col>
+              <h3>에이블스토어 레퍼런스</h3>
+              <ul className="reference_category">{this.listCategory()}</ul>
+              <br />
+              <br />
+              {this.addItems()}
+            </Col>
+          </Row>
+        </Container>
         <Footer />
       </div>
     );
