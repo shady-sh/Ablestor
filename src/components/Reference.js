@@ -6,22 +6,19 @@ import "../css/Reference.css";
 import { Row, Col, Container } from "react-bootstrap";
 
 const category = [
-  { id: 1, name: "의료/교육기관" },
-  { id: 2, name: "기업/금융/포탈" },
-  { id: 3, name: "정부 및 공공기관" },
-  { id: 4, name: "방송/미디어" },
-  { id: 5, name: "종교/사회단체" },
+  { id: 1, file: "edu", name: "의료/교육기관", size: 44, maxSize: 49 },
+  { id: 2, file: "company", name: "기업/금융/포탈", size: 53, maxSize: 56 },
+  { id: 3, file: "public", name: "정부 및 공공기관", size: 29, maxSize: 35 },
+  { id: 4, file: "media", name: "방송/미디어", size: 37, maxSize: 42 },
+  { id: 5, file: "social", name: "종교/사회단체", size: 9, maxSize: 14 },
 ];
 
 let items = [];
 
 export default class Reference extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      selectedContent: 1,
-    };
-  }
+  state = {
+    selectedContent: 1,
+  };
   setClassName(id) {
     if (this.state.selectedContent === id) {
       return "category-active";
@@ -29,10 +26,6 @@ export default class Reference extends Component {
       return "category";
     }
   }
-  setSelectedContent(id) {
-    this.setState({ selectedContent: id });
-  }
-
   listCategory = () =>
     category.map((number) => (
       <li key={number.id}>
@@ -41,125 +34,37 @@ export default class Reference extends Component {
           className={this.setClassName(number.id)}
           onClick={(e) => {
             e.preventDefault();
-            this.setSelectedContent(number.id);
+            this.setState({ selectedContent: number.id });
           }}
         >
           {number.name}
         </a>
       </li>
     ));
-
   addItems = () => {
     items = [];
-    if (this.state.selectedContent === 1) {
-      for (let i = 1; i <= 49; i++) {
-        if (i >= 45) {
-          items.push({
-            id: i,
-            Elements: <div></div>,
-          });
-        } else {
-          items.push({
-            id: i,
-            Elements: (
-              <img
-                className="img-sizing"
-                src={`/refs/edu_${i}.png`}
-                alt={`edu_${i}`}
-              />
-            ),
-          });
-        }
-      }
-    } else if (this.state.selectedContent === 2) {
-      for (let i = 3; i <= 59; i++) {
-        if (i !== 10) {
-          if (i >= 3 && i <= 9) {
-            items.push({
-              Elements: (
-                <img
-                  className="img-sizing"
-                  src={`https://www.ablestor.com/public/image/reference/b/refer_0${i}.png`}
-                  alt={`company_0${i}`}
-                />
-              ),
-            });
-          } else if (i >= 57) {
-            items.push({
-              Elements: <div />,
-            });
+    category.map((item) => {
+      if (this.state.selectedContent === item.id) {
+        for (let i = 1; i <= item.maxSize; i++) {
+          if (i > item.size) {
+            items.push({ Elements: <div /> });
           } else {
             items.push({
               Elements: (
                 <img
                   className="img-sizing"
-                  src={`https://www.ablestor.com/public/image/reference/b/refer_${i}.png`}
-                  alt={`company_${i}`}
+                  src={`/refs/${item.file}_${i}.png`}
+                  alt={`${item.file}_${i}`}
                 />
               ),
             });
           }
         }
       }
-    } else if (this.state.selectedContent === 3) {
-      for (let i = 1; i <= 35; i++) {
-        if (i >= 30) {
-          items.push({
-            Elements: <div></div>,
-          });
-        } else {
-          items.push({
-            Elements: (
-              <img
-                className="img-sizing"
-                src={`/refs/public_${i}.png`}
-                alt={`public_${i}`}
-              />
-            ),
-          });
-        }
-      }
-    } else if (this.state.selectedContent === 4) {
-      for (let i = 1; i <= 42; i++) {
-        if (i >= 38) {
-          items.push({
-            Elements: <div></div>,
-          });
-        } else {
-          items.push({
-            Elements: (
-              <img
-                className="img-sizing"
-                src={`/refs/media_${i}.png`}
-                alt={`media_${i}`}
-              />
-            ),
-          });
-        }
-      }
-    } else if (this.state.selectedContent === 5) {
-      for (let i = 1; i <= 14; i++) {
-        if (i >= 10) {
-          items.push({
-            Elements: <div></div>,
-          });
-        } else {
-          items.push({
-            Elements: (
-              <img
-                className="img-sizing"
-                src={`/refs/social_${i}.png`}
-                alt={`social_${i}`}
-              />
-            ),
-          });
-        }
-      }
-    }
+    });
     return this.list_eduItems();
   };
-
-  list_eduItems() {
+  list_eduItems = () => {
     return (
       <Row>
         {items.map((Item, idx) => (
@@ -167,31 +72,10 @@ export default class Reference extends Component {
         ))}
       </Row>
     );
-  }
-
+  };
   render() {
-    var items = [];
-    for (let index = 0; index < 44; index++) {
-      items[index] = index;
-    }
-
-    var jsxStr = "";
-    {
-      <div>col</div>;
-    }
-
     return (
       <div>
-        {/* {items.map((number) => {
-          return (
-            <div>
-              
-              {number % 7 === 0 && <div>row</div>}
-
-              
-            </div>
-          );
-        })} */}
         <Header />
         <SlickSlider />
         <Container className="page--gap">
