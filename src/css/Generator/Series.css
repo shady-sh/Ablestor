@@ -1,0 +1,61 @@
+.series_title {
+    display: block;
+    margin-top: 40px;
+    font-size: 20px;
+    padding-bottom: 7px;
+    border-bottom: 2px solid #333;
+}
+
+.model_list {
+    height: auto;
+    padding-bottom: 20px;
+    padding-left: 0;
+}
+
+.model_list li {
+    position: relative;
+    width: 188px;
+    margin-top: 20px;
+    margin-bottom: 7px;
+    display: inline-flex;
+    vertical-align: top;
+    cursor: pointer;
+    list-style: none;
+}
+
+.image_wrap {
+    position: relative;
+    width: 188px;
+    height: 188px;
+    background-color: #eee;
+}
+
+.image_wrap .made_logo {
+    position: absolute;
+    width: 70px;
+    right: 14px;
+    top: 14px;
+    transition: all 0.3s;
+}
+
+.image_wrap .model_image {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+    display: block;
+    transition: 0.3s;
+}
+
+.model_name {
+    margin-top: 12px;
+    padding-bottom: 4px;
+    display: block;
+    border-bottom: 1px solid #ddd;
+}
+
+.model_desc {
+    font-size: 13px;
+    color: #a9a9a9;
+    letter-spacing: -0.03em;
+}
