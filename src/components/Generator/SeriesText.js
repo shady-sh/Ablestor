@@ -9,7 +9,7 @@ export default class SeriesText extends Component {
           <div className="image_wrap">
             <img
               className="made_logo"
-              src="https://www.ablestor.com/public/image/logo/thumb_logo_synology.png"
+              src={this.props.logoUri}
               alt="thumb_logo_synology.png"
             />
             <img

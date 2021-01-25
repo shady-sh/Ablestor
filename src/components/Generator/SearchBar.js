@@ -27,7 +27,6 @@ export default class SearchBar extends Component {
               onKeyDown={(e) => {
                 if (e.key === "Enter") {
                   this.findString(getValue, e);
-                  // e.target.value = "";
                   e.preventDefault();
                 }
               }}
