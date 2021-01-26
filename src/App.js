@@ -5,6 +5,7 @@ import Reference from "./components/Reference";
 import Partner from "./components/Partner";
 import Synology from "./components/Synology";
 import Login from "./containers/Login";
+import Register from "./containers/Register";
 import { BrowserRouter, Route } from "react-router-dom";
 
 class App extends Component {
@@ -29,6 +30,9 @@ class App extends Component {
           </Route>
           <Route path="/Synology">
             <Synology />
+          </Route>
+          <Route path="/Register">
+            <Register />
           </Route>
         </BrowserRouter>
       </div>

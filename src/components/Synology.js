@@ -5,6 +5,7 @@ import ProductTitle from "./Generator/ProductTitle";
 import SearchBar from "./Generator/SearchBar";
 import SeriesText from "./Generator/SeriesText";
 import SeriesTitle from "./Generator/SeriesTitle";
+import TabGenerator from "./Generator/TabGenerator";
 import { Container, Row, Col } from "react-bootstrap";
 import "../css/Synology.css";
 
@@ -12,13 +13,13 @@ const syn_Uri =
   "https://www.ablestor.com/public/image/logo/thumb_logo_synology.png";
 
 const Titles = [
-  { title: "Synology FS Series" },
-  { title: "Synology SA/UC Series" },
-  { title: "Synology XS/XS+ Series" },
-  { title: "Synology PLUS Series" },
-  { title: "Synology Value Series" },
-  { title: "Synology J Series" },
-  { title: "Synology Expansion Unit" },
+  { title: "Synology FS Series", tag: 1 },
+  { title: "Synology SA/UC Series", tag: 2 },
+  { title: "Synology XS/XS+ Series", tag: 1 },
+  { title: "Synology PLUS Series", tag: 3 },
+  { title: "Synology Value Series", tag: 4 },
+  { title: "Synology J Series", tag: 5 },
+  { title: "Synology Expansion Unit", tag: 6 },
   { title: "Synology Ethernet Adapter" },
   { title: "Synology Ram Module" },
   { title: "Synology Adapter" },
@@ -37,8 +38,6 @@ const synItems = [
   [
     {
       href: "https://www.ablestor.com/product/detail?item=783",
-      uri:
-        "https://www.ablestor.com/public/image/product/Synology/thumb/FS6400.png",
       name: "FS6400",
       desc: (
         <>
@@ -53,8 +52,6 @@ const synItems = [
     },
     {
       href: "https://www.ablestor.com/product/detail?item=782",
-      uri:
-        "https://www.ablestor.com/public/image/product/Synology/thumb/FS3400.png",
       name: "FS3400",
       desc: (
         <>
@@ -69,8 +66,6 @@ const synItems = [
     },
     {
       href: "https://www.ablestor.com/product/detail?item=701",
-      uri:
-        "https://www.ablestor.com/public/image/product/Synology/thumb/FS2017.png",
       name: "FS2017",
       desc: (
         <>
@@ -83,8 +78,6 @@ const synItems = [
     },
     {
       href: "https://www.ablestor.com/product/detail?item=703",
-      uri:
-        "https://www.ablestor.com/public/image/product/Synology/thumb/FS1018.png",
       name: "FS1018",
       desc: (
         <>
@@ -99,8 +92,6 @@ const synItems = [
   [
     {
       href: "https://www.ablestor.com/product/detail?item=828",
-      uri:
-        "https://www.ablestor.com/public/image/product/Synology/thumb/SA3600.png",
       name: "SA3600",
       desc: (
         <>
@@ -114,8 +105,6 @@ const synItems = [
     },
     {
       href: "https://www.ablestor.com/product/detail?item=795",
-      uri:
-        "https://www.ablestor.com/public/image/product/Synology/thumb/UC3200.png",
       name: "UC3200",
       desc: (
         <>
@@ -129,8 +118,6 @@ const synItems = [
     },
     {
       href: "https://www.ablestor.com/product/detail?item=781",
-      uri:
-        "https://www.ablestor.com/public/image/product/Synology/thumb/SA3400.png",
       name: "SA3400",
       desc: (
         <>
@@ -145,8 +132,6 @@ const synItems = [
     },
     {
       href: "https://www.ablestor.com/product/detail?item=830",
-      uri:
-        "https://www.ablestor.com/public/image/product/Synology/thumb/SA3200D.png",
       name: "SA3200D",
       desc: (
         <>
@@ -163,8 +148,6 @@ const synItems = [
   [
     {
       href: "https://www.ablestor.com/product/detail?item=851",
-      uri:
-        "https://www.ablestor.com/public/image/product/Synology/thumb/DS1621xs+.png",
       name: "DS1621xs+",
       desc: (
         <>
@@ -177,8 +160,6 @@ const synItems = [
     },
     {
       href: "https://www.ablestor.com/product/detail?item=3",
-      uri:
-        "https://www.ablestor.com/public/image/product/Synology/thumb/RS4017xs+.png",
       name: "RS4017xs+",
       desc: (
         <>
@@ -193,8 +174,6 @@ const synItems = [
     },
     {
       href: "https://www.ablestor.com/product/detail?item=695",
-      uri:
-        "https://www.ablestor.com/public/image/product/Synology/thumb/RS3618xs.png",
       name: "RS3618xs",
       desc: (
         <>
@@ -208,8 +187,6 @@ const synItems = [
     },
     {
       href: "https://www.ablestor.com/product/detail?item=705",
-      uri:
-        "https://www.ablestor.com/public/image/product/Synology/thumb/RS2418RP+.png",
       name: "RS2418RP+",
       desc: (
         <>
@@ -222,8 +199,6 @@ const synItems = [
     },
     {
       href: "https://www.ablestor.com/product/detail?item=506",
-      uri:
-        "https://www.ablestor.com/public/image/product/Synology/thumb/DS3018xs.png",
       name: "DS3018xs",
       desc: (
         <>
@@ -237,8 +212,6 @@ const synItems = [
     },
     {
       href: "https://www.ablestor.com/product/detail?item=9",
-      uri:
-        "https://www.ablestor.com/public/image/product/Synology/thumb/DS3617xs.png",
       name: "DS3617xs",
       desc: (
         <>
@@ -251,8 +224,6 @@ const synItems = [
     },
     {
       href: "https://www.ablestor.com/product/detail?item=751",
-      uri:
-        "https://www.ablestor.com/public/image/product/Synology/thumb/RS1619xs+.png",
       name: "RS1619xs+",
       desc: (
         <>
@@ -266,8 +237,6 @@ const synItems = [
     },
     {
       href: "https://www.ablestor.com/product/detail?item=2",
-      uri:
-        "https://www.ablestor.com/public/image/product/Synology/thumb/RS18017xs+.png",
       name: "RS18017xs+",
       desc: (
         <>
@@ -280,8 +249,6 @@ const synItems = [
     },
     {
       href: "https://www.ablestor.com/product/detail?item=4",
-      uri:
-        "https://www.ablestor.com/public/image/product/Synology/thumb/RS3617xs+.png",
       name: "RS3617xs+",
       desc: (
         <>
@@ -295,8 +262,6 @@ const synItems = [
     },
     {
       href: "https://www.ablestor.com/product/detail?item=5",
-      uri:
-        "https://www.ablestor.com/public/image/product/Synology/thumb/RS3617RPxs.png",
       name: "RS3617RPxs",
       desc: (
         <>
@@ -313,8 +278,6 @@ const synItems = [
   [
     {
       href: "https://www.ablestor.com/product/detail?item=856",
-      uri:
-        "https://www.ablestor.com/public/image/product/Synology/thumb/RS1221RP+.png",
       name: "RS1221RP+",
       desc: (
         <>
@@ -326,8 +289,6 @@ const synItems = [
     },
     {
       href: "https://www.ablestor.com/product/detail?item=855",
-      uri:
-        "https://www.ablestor.com/public/image/product/Synology/thumb/RS1221+.png",
       name: "RS1221+",
       desc: (
         <>
@@ -339,8 +300,6 @@ const synItems = [
     },
     {
       href: "https://www.ablestor.com/product/detail?item=833",
-      uri:
-        "https://www.ablestor.com/public/image/product/Synology/thumb/DS220+.png",
       name: "DS220+",
       desc: (
         <>
@@ -353,8 +312,6 @@ const synItems = [
     },
     {
       href: "https://www.ablestor.com/product/detail?item=854",
-      uri:
-        "https://www.ablestor.com/public/image/product/Synology/thumb/DS1821+.png",
       name: "DS1821+",
       desc: (
         <>
@@ -362,6 +319,214 @@ const synItems = [
           4 GB DDR4 ECC SODIMM <br />
           (expandable up to 32 GB) <br />
           bay : 기본 8bay ( max : 18bay )
+        </>
+      ),
+    },
+  ],
+  [
+    {
+      href: "https://www.ablestor.com/product/detail?item=786",
+      name: "DS620slim",
+      desc: (
+        <>
+          Intel Celeron J3355 <br />
+          듀얼코어 2.0 burst up to 2.5 GHz <br />
+          2GB DDR3L (Max: 6GB) <br />
+          6bay
+        </>
+      ),
+    },
+    {
+      href: "https://www.ablestor.com/product/detail?item=608",
+      name: "DS218",
+      desc: (
+        <>
+          Realtek RTD1296 <br />
+          쿼드코어 1.4 GHz <br />
+          2 GB DDR 4 <br />
+          2bay
+        </>
+      ),
+    },
+    {
+      href: "https://www.ablestor.com/product/detail?item=507",
+      name: "DS118",
+      desc: (
+        <>
+          Realtek RTD 1296 <br />
+          쿼드코어 1.4GHz <br />
+          1GB DDR4 <br />
+          1bay
+        </>
+      ),
+    },
+    {
+      href: "https://www.ablestor.com/product/detail?item=509",
+      name: "DS218play",
+      desc: (
+        <>
+          Realtek RTD 1296 <br />
+          쿼드코어 1.4GHz <br />
+          1GB DDR4 <br />
+          2bay
+        </>
+      ),
+    },
+    {
+      href: "https://www.ablestor.com/product/detail?item=493",
+      name: "DS418",
+      desc: (
+        <>
+          Realtek RTD1926 <br />
+          쿼드코어 1.4GHz <br />
+          2GB DDR4 <br />
+          4bay
+        </>
+      ),
+    },
+  ],
+  [
+    {
+      href: "https://www.ablestor.com/product/detail?item=829",
+      name: "DS420j",
+      desc: (
+        <>
+          Realtek RTD1296 <br />
+          쿼드 코어 1.4 GHz <br />
+          1 GB DDR4 <br />
+          4bay(드라이브 확장 불가)
+        </>
+      ),
+    },
+    {
+      href: "https://www.ablestor.com/product/detail?item=832",
+      name: "DS220j",
+      desc: (
+        <>
+          Realtek RTD1296 <br />
+          쿼드 코어 1.4 GHz <br />
+          512MB DDR4 <br />
+          2bay(드라이브 확장 불가)
+        </>
+      ),
+    },
+    {
+      href: "https://www.ablestor.com/product/detail?item=794",
+      name: "DS120j",
+      desc: (
+        <>
+          Marvell A3720 <br />
+          듀얼 코어 800 Mhz <br />
+          512MB DDR 3L <br />
+          1bay(드라이브 확장 불가)
+        </>
+      ),
+    },
+    {
+      href: "https://www.ablestor.com/product/detail?item=780",
+      name: "DS419slim",
+      desc: (
+        <>
+          Marvell Armada 385 88F6820 <br />
+          듀얼 코어 1.33 GHz <br />
+          512MB DDR3L <br />
+          4bay(드라이브 확장 불가)
+        </>
+      ),
+    },
+    {
+      href: "https://www.ablestor.com/product/detail?item=742",
+      name: "DS119j",
+      desc: (
+        <>
+          Marvell A3720 <br />
+          듀얼 코어 800 Mhz <br />
+          256MB DDR 3L <br />
+          1bay(드라이브 확장 불가)
+        </>
+      ),
+    },
+    {
+      href: "https://www.ablestor.com/product/detail?item=487",
+      name: "DS418j",
+      desc: (
+        <>
+          Realtek RTD1293 <br />
+          듀얼 코어 1.4 GHz <br />
+          1 GB DDR4 <br />
+          4bay(드라이브 확장 불가)
+        </>
+      ),
+    },
+  ],
+  [
+    {
+      href: "https://www.ablestor.com/product/detail?item=849",
+      name: "FX2421",
+      desc: (
+        <>
+          24bay 확장유닛 <br /> <br />
+          지원 모델 : <br />
+          FS 시리즈 : FS6400, FS3600, <br />
+          FS3400
+        </>
+      ),
+    },
+    {
+      href: "https://www.ablestor.com/product/detail?item=222",
+      name: "RX1217RP",
+      desc: (
+        <>
+          12Bay 확장 유닛 <br /> <br />
+          적용 모델 : <br />
+          RS1619xs+, RS4017xs+ <br />
+          RS3617xs+, RS3617RPxs <br />
+          RS3617xs, RS3614xs+ <br />
+          RS3614(RP)xs, RS2416(RP)+ <br />
+          RS2414(RP)+, RS3413xs+ <br />
+          RS3412(RP)xs, RS3411(RP)xs <br />
+          RS2212(RP)+, RS2211(RP)+ <br />
+          (12bay)
+        </>
+      ),
+    },
+    {
+      href: "https://www.ablestor.com/product/detail?item=56",
+      name: "RX1217",
+      desc: (
+        <>
+          12Bay 확장 유닛 <br /> <br />
+          적용 모델 : <br />
+          RS1619xs+, RS4017xs+ <br />
+          RS3617xs+, RS3617RPxs <br />
+          RS3617xs, RS3614xs+ <br />
+          RS3614(RP)xs, RS2416(RP)+ <br />
+          RS2414(RP)+, RS3413xs+ <br />
+          RS3412(RP)xs, RS3411(RP)xs <br />
+          RS2212(RP)+, RS2211(RP)+ <br />
+          (12bay)
+        </>
+      ),
+    },
+    {
+      href: "https://www.ablestor.com/product/detail?item=541",
+      name: "RX1217sas",
+      desc: (
+        <>
+          12Bay 확장 유닛 <br /> <br />
+          지원 모델 : <br />
+          FS3017, FS2017, RS18017xs+
+        </>
+      ),
+    },
+    {
+      href: "https://www.ablestor.com/product/detail?item=691",
+      name: "RX2417sas",
+      desc: (
+        <>
+          24Bay 확장 유닛 <br /> <br />
+          지원 모델 : <br />
+          FS3017, FS2017, RS18017xs+
         </>
       ),
     },
@@ -390,17 +555,25 @@ export default class Synology extends Component {
               text="고객님께 적합한 NAS를 확인해보세요."
             />
             <SearchBar />
+            <TabGenerator
+              btns={
+                <>
+                  <Col>Area</Col>
+                </>
+              }
+            />
             <Col className="collect" xs={12}>
               {synItems.map((v, i) => {
                 return this.modelList(
                   Titles[i].title,
                   synItems[i].map((Item, idx) => {
+                    let _uri = `https://www.ablestor.com/public/image/product/Synology/thumb/${Item.name}.png`;
                     return (
                       <SeriesText
                         key={idx}
                         href={Item.href}
                         logoUri={syn_Uri}
-                        uri={Item.uri}
+                        uri={_uri}
                         name={Item.name}
                         desc={Item.desc}
                       />

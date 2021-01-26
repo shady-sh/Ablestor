@@ -20,3 +20,8 @@
 .space--top {
     margin-top: 40px;
 }
+
+.model_category {
+    width: 100%;
+    padding-left: 0;
+}

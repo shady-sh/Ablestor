@@ -1,8 +1,13 @@
-import { Component } from "react";
-import { Tabs, Tab } from "@material-ui/core";
+import React from "react";
+import { Row } from "react-bootstrap";
 
-export default class TabGenerator extends Component {
-  render() {
-    return <Tabs></Tabs>;
-  }
-}
+const TabGenerator = (props) => {
+  return (
+    // <ul className="model_category models Synology"></ul>
+    <>
+      <Row>{props.btns}</Row>
+    </>
+  );
+};
+
+export default TabGenerator;

@@ -1,5 +1,5 @@
 .bg-img {
-    background: url('../Images/bg.jpg');
+    background: url('../../Images/bg.jpg');
     height: 100vh;
     background-size: cover;
     background-position: center;
@@ -150,3 +150,9 @@
 .bg-img .signup a:hover{
     text-decoration: underline;
   }
+
+/* Register.js part */
+.content .form-control {
+  margin-bottom: 1.7rem;
+  height: 2.6rem;
+}
