@@ -13,27 +13,13 @@ class App extends Component {
     return (
       <div className="App">
         <BrowserRouter>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/Introduce">
-            <Introduce />
-          </Route>
-          <Route path="/Reference">
-            <Reference />
-          </Route>
-          <Route path="/Partner">
-            <Partner />
-          </Route>
-          <Route path="/Login">
-            <Login />
-          </Route>
-          <Route path="/Synology">
-            <Synology />
-          </Route>
-          <Route path="/Register">
-            <Register />
-          </Route>
+          <Route exact path="/" component={Home} />
+          <Route path="/Introduce" component={Introduce} />
+          <Route path="/Reference" component={Reference} />
+          <Route path="/Partner" component={Partner} />
+          <Route path="/Login" component={Login} />
+          <Route path="/Synology" component={Synology} />
+          <Route path="/Register" component={Register} />
         </BrowserRouter>
       </div>
     );

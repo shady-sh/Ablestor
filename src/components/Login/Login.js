@@ -99,7 +99,8 @@ export default class Login extends Component {
           </div>
           <div className="signup">
             {`계정이 없으신가요? `}
-            <a href="/Register">회원가입</a>
+            <a href="/Register">회원가입</a> <br />
+            <a href="/">홈페이지 이동</a>
           </div>
         </div>
       </div>

@@ -156,3 +156,14 @@
   margin-bottom: 1.7rem;
   height: 2.6rem;
 }
+
+.content p {
+  margin-top: 2rem;
+  margin-bottom: 0;
+  color: aqua;
+}
+
+.content p a {
+  text-decoration: underline;
+  color: skyblue;
+}

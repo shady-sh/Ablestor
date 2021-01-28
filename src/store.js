@@ -1,3 +1,5 @@
 import { createStore } from "redux";
 
-export default createStore((state, action) => {});
+export default createStore((state, action) => {
+  return state;
+});
