@@ -5,7 +5,7 @@ import Reference from "./components/Reference";
 import Partner from "./components/Partner";
 import Synology from "./components/Synology";
 import Login from "./containers/Login";
-import Register from "./containers/Register";
+import Register from "./components/Login/Register";
 import { BrowserRouter, Route } from "react-router-dom";
 
 class App extends Component {

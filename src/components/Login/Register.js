@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { Form, Button } from "react-bootstrap";
+import { connect } from "react-redux";
 import "../../css/Login/Login.css";
 
 const itemList = [
@@ -9,7 +10,7 @@ const itemList = [
   { id: "password_confirm", type: "password", placeholder: "비밀번호 재입력" },
 ];
 
-export default class Register extends Component {
+class Register extends Component {
   state = {
     user: {
       username: "",
@@ -36,7 +37,7 @@ export default class Register extends Component {
     e.preventDefault();
     const { user } = this.state;
     if (user.username && user.email && user.password && user.password_confirm) {
-      console.log("TRUE");
+      this.props.register(user);
     }
   };
 
@@ -52,6 +53,8 @@ export default class Register extends Component {
     );
   };
   render() {
+    const { registering } = this.props;
+    const { user, submitted } = this.state;
     return (
       <div className="bg-img">
         <div className="content">
@@ -74,3 +77,15 @@ export default class Register extends Component {
     );
   }
 }
+
+function mapState(state) {
+  const { registering } = state.registration;
+  return { registering };
+}
+
+const actionCreators = {
+  register: userActions.register,
+};
+
+const connectedRegisterPage = connect(mapState, actionCreators)(Register);
+export { connectedRegisterPage as Register };
