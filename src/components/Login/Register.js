@@ -1,7 +1,9 @@
 import { Component } from "react";
 import { Form, Button } from "react-bootstrap";
-import { connect } from "react-redux";
+import axios from "axios";
 import "../../css/Login/Login.css";
+axios.defaults.withCredentials = true;
+const headers = { withCredentials: true };
 
 const itemList = [
   { id: "username", type: "username", placeholder: "이름" },
@@ -10,7 +12,7 @@ const itemList = [
   { id: "password_confirm", type: "password", placeholder: "비밀번호 재입력" },
 ];
 
-class Register extends Component {
+export default class Register extends Component {
   state = {
     user: {
       username: "",
@@ -37,7 +39,31 @@ class Register extends Component {
     e.preventDefault();
     const { user } = this.state;
     if (user.username && user.email && user.password && user.password_confirm) {
-      this.props.register(user);
+      if (user.password !== user.password_confirm) {
+        alert("비밀번호 재입력을 올바르게 입력해주세요.");
+        return;
+      }
+      const send_param = {
+        headers,
+        name: user.username,
+        email: user.email,
+        password: user.password,
+      };
+      axios
+        .post("http://localhost:8000/member/register", send_param)
+        .then((returnData) => {
+          if (returnData.data.message) {
+            alert(returnData.data.message);
+            if (returnData.data.dupYn === "1") {
+              window.location.reload();
+            } else {
+              window.location.href = "/Login";
+            }
+          } else {
+            alert("회원가입 실패");
+          }
+        });
+      // this.props.register(user);
     }
   };
 
@@ -53,8 +79,6 @@ class Register extends Component {
     );
   };
   render() {
-    const { registering } = this.props;
-    const { user, submitted } = this.state;
     return (
       <div className="bg-img">
         <div className="content">
@@ -77,15 +101,3 @@ class Register extends Component {
     );
   }
 }
-
-function mapState(state) {
-  const { registering } = state.registration;
-  return { registering };
-}
-
-const actionCreators = {
-  register: userActions.register,
-};
-
-const connectedRegisterPage = connect(mapState, actionCreators)(Register);
-export { connectedRegisterPage as Register };
