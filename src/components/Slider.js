@@ -290,8 +290,8 @@ const Items = [
     ),
   },
 ];
-const listItems = Items.map((Item) => (
-  <CardGroup className="slider_cover">
+const listItems = Items.map((Item, idx) => (
+  <CardGroup className="slider_cover" key={idx}>
     <CardGroup className="cardgroup">{Item.Elements}</CardGroup>
   </CardGroup>
 ));

@@ -103,8 +103,8 @@ export default class Home extends Component {
     );
   };
   itemWrapper = () => {
-    let liJSX = (link, uri, appendText) => (
-      <li className="item icon_item">
+    let liJSX = (link, uri, appendText, key) => (
+      <li className="item icon_item" key={key}>
         <a href={link}>
           <img src={uri} alt="image_icon.png"></img>
           <span>{appendText}</span>
@@ -115,8 +115,8 @@ export default class Home extends Component {
       <div className="item_wrapper">
         <ul>
           {this.createImage(imageItem.link, imageItem.uri)}
-          {iconItems.map((item) => {
-            return liJSX(item.link, item.uri, item.appendText);
+          {iconItems.map((item, idx) => {
+            return liJSX(item.link, item.uri, item.appendText, idx);
           })}
         </ul>
       </div>
@@ -143,9 +143,9 @@ export default class Home extends Component {
   };
 
   contentSlider = () => {
-    let slideCard = (link, uri, type, title, desc) => {
+    let slideCard = (link, uri, type, title, desc, key) => {
       return (
-        <CardGroup>
+        <CardGroup key={key}>
           <Card className="content-item">
             <a href={link}>
               <Card.Img variant="top" src={uri} />
@@ -162,13 +162,14 @@ export default class Home extends Component {
     };
     return (
       <Slider className="content-slider" {...settings}>
-        {slideCardItems.map((item) => {
+        {slideCardItems.map((item, idx) => {
           return slideCard(
             item.link,
             item.uri,
             item.type,
             item.title,
-            item.desc
+            item.desc,
+            idx
           );
         })}
       </Slider>

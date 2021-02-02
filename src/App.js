@@ -5,6 +5,7 @@ import Reference from "./components/Reference";
 import Partner from "./components/Partner";
 import Synology from "./components/Synology";
 import Login from "./containers/Login";
+import Logout from "./components/Login/Logout";
 import Register from "./components/Login/Register";
 import { BrowserRouter, Route } from "react-router-dom";
 
@@ -18,6 +19,7 @@ class App extends Component {
           <Route path="/Reference" component={Reference} />
           <Route path="/Partner" component={Partner} />
           <Route path="/Login" component={Login} />
+          <Route path="/Logout" component={Logout} />
           <Route path="/Synology" component={Synology} />
           <Route path="/Register" component={Register} />
         </BrowserRouter>
