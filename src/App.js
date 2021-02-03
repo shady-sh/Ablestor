@@ -8,6 +8,14 @@ import Login from "./containers/Login";
 import Logout from "./components/Login/Logout";
 import Register from "./components/Login/Register";
 import { BrowserRouter, Route } from "react-router-dom";
+import $ from "jquery";
+import {} from "jquery.cookie";
+import Dashboard from "./components/mypage/Dashboard";
+import Account from "./components/mypage/Account";
+import Career from "./components/mypage/Career";
+import Order from "./components/mypage/Order";
+import Product from "./components/mypage/Product";
+import Qna from "./components/mypage/Qna";
 
 class App extends Component {
   render() {
@@ -22,9 +30,30 @@ class App extends Component {
           <Route path="/Logout" component={Logout} />
           <Route path="/Synology" component={Synology} />
           <Route path="/Register" component={Register} />
+          <Route path="/MyPage/Dashboard" component={Dashboard} />
+          <Route path="/MyPage/Account" component={Account} />
+          <Route path="/MyPage/Career" component={Career} />
+          <Route path="/MyPage/Order" component={Order} />
+          <Route path="/MyPage/Product" component={Product} />
+          <Route path="/MyPage/Qna" component={Qna} />
         </BrowserRouter>
       </div>
     );
+  }
+  componentDidMount() {
+    const loginLink = ["login", "Login", "register", "Register"];
+    if (window.location.href.includes("mypage")) {
+      if (!$.cookie("login_id")) {
+        window.location.href = "/login";
+      }
+    }
+    for (let i = 0; i < loginLink.length; i++) {
+      if (window.location.href.includes(loginLink[i])) {
+        if ($.cookie("login_id")) {
+          window.location.href = "/";
+        }
+      }
+    }
   }
 }
 

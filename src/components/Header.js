@@ -45,11 +45,11 @@ const dropdown = [
 ];
 
 const login_dropdown = [
-  { href: "", val: "대시보드" },
-  { href: "", val: "계정" },
-  { href: "", val: "주문" },
-  { href: "", val: "기기" },
-  { href: "", val: "나의 질문 관리" },
+  { href: "/mypage/dashboard", val: "대시보드" },
+  { href: "/mypage/account", val: "계정" },
+  { href: "/mypage/order", val: "주문" },
+  { href: "/mypage/product", val: "기기" },
+  { href: "/mypage/qna", val: "나의 질문 관리" },
   { href: "/Logout", val: "로그아웃" },
 ];
 
@@ -90,8 +90,7 @@ export default class Header extends Component {
             <img
               alt=""
               src="https://www.ablestor.com/public/image/logo_white.png"
-              style={{ padding: "100px" }}
-              className="d-inline-block align-top"
+              style={{ marginLeft: "6rem" }}
             />
           </Navbar.Brand>
           <Nav className="m-auto navc">
