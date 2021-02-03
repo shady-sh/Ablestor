@@ -22,8 +22,8 @@ const Login = () => {
   const loginExecute = () => {
     const send_param = {
       headers,
-      email: email,
-      password: password,
+      email,
+      password,
     };
     axios
       .post("http://localhost:8000/member/login", send_param)
@@ -38,6 +38,7 @@ const Login = () => {
         }
       });
   };
+
   return (
     <div className="bg-img">
       <div className="content">
@@ -84,7 +85,7 @@ const Login = () => {
           {generateLink("instagram", "인스타그램")}
         </div>
         <div className="signup">
-          {`계정이 없으신가요? `}
+          계정이 없으신가요?
           <a href="/Register">회원가입</a> <br />
           <a href="/">홈페이지 이동</a>
         </div>

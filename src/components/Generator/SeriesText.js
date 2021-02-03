@@ -1,5 +1,5 @@
 import { Component } from "react";
-import "../../css/Generator/Series.css";
+import "../../css/Generator/Series.scss";
 
 export default class SeriesText extends Component {
   render() {

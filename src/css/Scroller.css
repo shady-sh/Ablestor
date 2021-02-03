@@ -5,7 +5,7 @@
     overflow: hidden;
     transition: 0.7s;
 }
-.active {
+.page--content__site-map .active {
     height: 534.8px;
     transition: 0.7s;
 }
