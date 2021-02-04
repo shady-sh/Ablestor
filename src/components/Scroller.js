@@ -6,7 +6,6 @@ export default class Scroller extends Component {
   constructor(props) {
     super(props);
     this.state = { isOpen: false };
-    // this.getItems()
   }
   clickHandle = () => {
     this.setState({ isOpen: !this.state.isOpen });

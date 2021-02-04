@@ -1,4 +1,8 @@
 import { Component } from "react";
+import { BrowserRouter, Route } from "react-router-dom";
+import $ from "jquery";
+import {} from "jquery.cookie";
+import Header from "./components/Header";
 import Home from "./components/Home";
 import Introduce from "./components/Introduce";
 import Reference from "./components/Reference";
@@ -7,9 +11,6 @@ import Synology from "./components/Synology";
 import Login from "./containers/Login";
 import Logout from "./components/Login/Logout";
 import Register from "./components/Login/Register";
-import { BrowserRouter, Route } from "react-router-dom";
-import $ from "jquery";
-import {} from "jquery.cookie";
 import Dashboard from "./components/mypage/Dashboard";
 import Account from "./components/mypage/Account";
 import Career from "./components/mypage/Career";
@@ -21,6 +22,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Header />
         <BrowserRouter>
           <Route exact path="/" component={Home} />
           <Route path="/Introduce" component={Introduce} />

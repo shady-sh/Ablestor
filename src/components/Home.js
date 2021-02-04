@@ -1,12 +1,11 @@
-import Header from "../components/Header";
+import { Component } from "react";
+import { Container, Row, Col, Button, CardGroup, Card } from "react-bootstrap";
+
 import Slider from "react-slick";
 import SlickSlider from "../components/Slider";
 import Scroller from "../components/Scroller";
 import Footer from "../components/Footer";
-import "../css/Home.css";
-import { Component } from "react";
-import { Container, Row, Col, Button } from "react-bootstrap";
-import { CardGroup, Card } from "react-bootstrap";
+import "../css/Home.scss";
 
 const grayLine = <hr style={{ width: "6rem" }} />;
 
@@ -92,21 +91,67 @@ const slideCardItems = [
   },
 ];
 
+const infoCardItems = [
+  {
+    path: "https://demo.synology.com/ko-kr",
+    title: "DSM 라이브 데모",
+    text: "수상 경력의 NAS OS인 DiskStation Manager(DSM)를 지금 사용해 보세요!",
+  },
+  {
+    path: "https://demo.synology.com/ko-kr/beta",
+    title: "Synology 베타 프로그램",
+    text: "Synology의 응용 프로그램을 최적화하고 개선할 수 있도록 도와주세요.",
+  },
+  {
+    path: "https://www.ablestor.com/guide/ransomware?type=info",
+    title: "랜섬웨어 보호 방법",
+    text: "효율적인 랜섬웨어를 보호하는 방법은 무엇이 있을까요?",
+  },
+];
+
+const helpCardItems = [
+  {
+    title: "견적/구매 관련 문의",
+    desc_1: <p>기업 규모와 활용도에 적합한 맞춤형 진단이 필요하십니까?</p>,
+    desc_2: <p>사내 네트워크 환경에 알맞는 스토리지 솔루션이 필요하십니까?</p>,
+    desc_3: <p>관공서 납품등 기업에서의 제품 구입 상담을 요청하십시오.</p>,
+    desc_4: <p>담당자가 신속히 연락드리겠습니다.</p>,
+    btn: "견적 및 구매 관련 요청",
+  },
+  {
+    title: "전문가 상담 신청",
+    desc_1: <p>제품 이용에 궁금한 사항이 있으신가요?</p>,
+    desc_2: <p>NAS 전문 엔지니어가 실시간으로 대기중입니다.</p>,
+    desc_3: <p>전문가 상담 신청으로 문제점을 해결해보세요.</p>,
+    desc_4: <p className="empty" />,
+    btn: "전문가 상담 신청하기",
+  },
+];
+
+const row = (className, code) => {
+  return <Row className={className}>{code}</Row>;
+};
+
+const col = (xs, code) => {
+  return <Col xs={xs}>{code}</Col>;
+};
+
 export default class Home extends Component {
   createImage = (href, imgSrc) => {
     return (
       <li className="item image_item">
         <a href={href}>
-          <img src={imgSrc} alt="image_icon.png"></img>
+          <img src={imgSrc} alt="image_icon" />
         </a>
       </li>
     );
   };
+
   itemWrapper = () => {
-    let liJSX = (link, uri, appendText, key) => (
+    const liJSX = (link, uri, appendText, key) => (
       <li className="item icon_item" key={key}>
         <a href={link}>
-          <img src={uri} alt="image_icon.png"></img>
+          <img src={uri} alt="image_icon" />
           <span>{appendText}</span>
         </a>
       </li>
@@ -133,17 +178,13 @@ export default class Home extends Component {
         <p>이벤트 및 행사를 보실 수 있는 공간입니다.</p>
         <p>에이블스토어에서 제공해드리는 특별한 혜택들!</p>
         <p>놓치지 마시고 지금 확인해보세요.</p>
-        <br />
-        <br />
-        <Button variant="outline-dark" style={{ width: "60%" }}>
-          자세히 보기
-        </Button>
+        <Button variant="outline-dark">자세히 보기</Button>
       </div>
     );
   };
 
   contentSlider = () => {
-    let slideCard = (link, uri, type, title, desc, key) => {
+    const slideCard = (link, uri, type, title, desc, key) => {
       return (
         <CardGroup key={key}>
           <Card className="content-item">
@@ -176,9 +217,9 @@ export default class Home extends Component {
     );
   };
 
-  createInfoCard = (imgSrc, path, title, text) => {
+  createInfoCard = (imgSrc, path, title, text, key) => {
     return (
-      <Card style={{ width: "21rem" }}>
+      <Card style={{ width: "21rem" }} key={key}>
         <a href={path} target="_blank" rel="noreferrer">
           <Card.Img variant="top" src={imgSrc} />
           <Card.Body>
@@ -189,52 +230,18 @@ export default class Home extends Component {
       </Card>
     );
   };
-  infoCard = () => {
-    return (
-      <Row style={{ marginTop: "0px" }}>
-        <Col xs={4}>
-          {this.createInfoCard(
-            "https://www.ablestor.com/public/image/Main/Information_01.png",
-            "https://demo.synology.com/ko-kr",
-            "DSM 라이브 데모",
-            "수상 경력의 NAS OS인 DiskStation Manager(DSM)를 지금 사용해 보세요!"
-          )}
-        </Col>
-        <Col xs={4}>
-          {this.createInfoCard(
-            "https://www.ablestor.com/public/image/Main/Information_02.png",
-            "https://www.synology.com/ko-kr/beta",
-            "Synology 베타 프로그램",
-            "Synology의 응용 프로그램을 최적화하고 개선할 수 있도록 도와주세요."
-          )}
-        </Col>
-        <Col xs={4}>
-          {this.createInfoCard(
-            "https://www.ablestor.com/public/image/Main/Information_03.png",
-            "https://www.ablestor.com/guide/ransomware?type=info",
-            "랜섬웨어 보호 방법",
-            "효율적인 랜섬웨어를 보호하는 방법은 무엇이 있을까요?"
-          )}
-        </Col>
-      </Row>
-    );
-  };
 
-  createHelpCard = (title, desc_1, desc_2, desc_3, desc_4, btn) => {
-    if (desc_4 === "") {
-      desc_4 = <br />;
-    }
+  createHelpCard = (title, desc_1, desc_2, desc_3, desc_4, btn, key) => {
     return (
-      <Col xs={6}>
-        <Card style={{ width: "30rem" }}>
+      <Col xs={6} key={key}>
+        <Card>
           <Card.Body>
             <Card.Title>{title}</Card.Title>
             {grayLine}
-            <p>{desc_1}</p>
-            <p>{desc_2}</p>
-            <p>{desc_3}</p>
-            <p>{desc_4}</p>
-            <br />
+            {desc_1}
+            {desc_2}
+            {desc_3}
+            {desc_4}
             <Button variant="outline-danger">{btn}</Button>
           </Card.Body>
         </Card>
@@ -245,16 +252,16 @@ export default class Home extends Component {
   render() {
     return (
       <div>
-        <Header />
         <SlickSlider />
         <Container className="page--main">
-          <Row className="page--content__company">
-            <Col xs={12}>{this.itemWrapper()}</Col>
-          </Row>
-          <Row className="page--content__promotion">
-            <Col xs={4}>{this.promotionDesc()}</Col>
-            <Col xs={8}>{this.contentSlider()}</Col>
-          </Row>
+          {row("page--content__company", col(12, this.itemWrapper()))}
+          {row(
+            "page--content__promotion",
+            <>
+              {col(4, this.promotionDesc())}
+              {col(8, this.contentSlider())}
+            </>
+          )}
           <div className="page--content__notice">
             <Row>
               <Col xs={12}>
@@ -263,34 +270,47 @@ export default class Home extends Component {
                 </h3>
               </Col>
             </Row>
-            {this.infoCard()}
+            <Row style={{ marginTop: "0px" }}>
+              {infoCardItems.map((v, i) => {
+                return (
+                  <Col xs={4}>
+                    {this.createInfoCard(
+                      `https://www.ablestor.com/public/image/Main/Information_0${
+                        i + 1
+                      }.png`,
+                      v.path,
+                      v.title,
+                      v.text,
+                      i
+                    )}
+                  </Col>
+                );
+              })}
+            </Row>
             <Row className="bar">
               <Col xs={12}>
                 <a
                   href="https://cafe.naver.com/synologynas"
                   target="_blank"
                   rel="noreferrer"
-                >{``}</a>
+                >
+                  .
+                </a>
               </Col>
             </Row>
           </div>
           <Row className="page--content__help">
-            {this.createHelpCard(
-              "견적/구매 관련 문의",
-              "기업 규모와 활용도에 적합한 맞춤형 진단이 필요하십니까?",
-              "사내 네트워크 환경에 알맞는 스토리지 솔루션이 필요하십니까?",
-              "관공서 납품등 기업에서의 제품 구입 상담을 요청하십시오.",
-              "담당자가 신속히 연락드리겠습니다.",
-              "견적 및 구매 관련 요청"
-            )}
-            {this.createHelpCard(
-              "전문가 상담 신청",
-              "제품 이용에 궁금한 사항이 있으신가요?",
-              "NAS 전문 엔지니어가 실시간으로 대기중입니다.",
-              "전문가 상담 신청으로 문제점을 해결해보세요.",
-              "",
-              "전문가 상담 신청하기"
-            )}
+            {helpCardItems.map((v, i) => {
+              return this.createHelpCard(
+                v.title,
+                v.desc_1,
+                v.desc_2,
+                v.desc_3,
+                v.desc_4,
+                v.btn,
+                i
+              );
+            })}
           </Row>
           <Row className="page--content__information">
             <Col xs={7}>
@@ -306,7 +326,7 @@ export default class Home extends Component {
                 <img
                   className="ibk_logo"
                   src="https://www.ablestor.com/public/image/logo/IBK_logo.png"
-                  alt="IBK_logo.png"
+                  alt="IBK_logo"
                 />
               </p>
             </Col>

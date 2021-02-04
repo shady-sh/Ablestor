@@ -1,0 +1,32 @@
+.footer {
+    padding: 40px 0;
+    color: #fff;
+    background-color: #1e1e1e;
+    font-size: 14px;
+    a {
+        margin-right: 14px;
+    }
+    p {
+        line-height: 0.7;
+        letter-spacing: -3px;
+        font-size: 14px;
+    }
+    p.link {
+        margin-bottom: 20px;
+        a:hover {
+            color: #FF3636;
+        }
+    }
+    .first-line {
+        margin-right: 12px;
+    }
+    .second-line {
+        margin-right: 20px;
+    }
+    .third-line {
+        margin-right: 30px;
+    }
+}
+.push-1 {
+    left: 8.333333%
+}

@@ -1,5 +1,4 @@
 import { Component } from "react";
-import Header from "./Header";
 import Footer from "./Footer";
 import ProductTitle from "./Generator/ProductTitle";
 import SearchBar from "./Generator/SearchBar";
@@ -545,7 +544,6 @@ export default class Synology extends Component {
   render() {
     return (
       <div>
-        <Header />
         <Container className="page--product">
           <Row>
             <ProductTitle
@@ -566,8 +564,8 @@ export default class Synology extends Component {
               {synItems.map((v, i) => {
                 return this.modelList(
                   Titles[i].title,
-                  synItems[i].map((Item, idx) => {
-                    let _uri = `https://www.ablestor.com/public/image/product/Synology/thumb/${Item.name}.png`;
+                  v.map((Item, idx) => {
+                    const _uri = `https://www.ablestor.com/public/image/product/Synology/thumb/${Item.name}.png`;
                     return (
                       <SeriesText
                         key={idx}

@@ -5,6 +5,8 @@ import "../css/Header.css";
 import $ from "jquery";
 import {} from "jquery.cookie";
 
+const titles = ["회사정보", "제품정보", "솔루션", "고객지원"];
+
 const dropdown = [
   [
     { href: "/Introduce", val: "회사소개" },
@@ -94,42 +96,19 @@ export default class Header extends Component {
             />
           </Navbar.Brand>
           <Nav className="m-auto navc">
-            <NavDropdown title="회사정보" id={0}>
-              {dropdown[0].map((num, idx) => {
-                return (
-                  <NavDropdown.Item key={idx} href={num.href}>
-                    {num.val}
-                  </NavDropdown.Item>
-                );
-              })}
-            </NavDropdown>
-            <NavDropdown title="제품정보" id="1">
-              {dropdown[1].map((num, idx) => {
-                return (
-                  <NavDropdown.Item key={idx} href={num.href}>
-                    {num.val}
-                  </NavDropdown.Item>
-                );
-              })}
-            </NavDropdown>
-            <NavDropdown title="솔루션" id="2">
-              {dropdown[2].map((num, idx) => {
-                return (
-                  <NavDropdown.Item key={idx} href={num.href}>
-                    {num.val}
-                  </NavDropdown.Item>
-                );
-              })}
-            </NavDropdown>
-            <NavDropdown title="고객지원" id="3">
-              {dropdown[3].map((num, idx) => {
-                return (
-                  <NavDropdown.Item key={idx} href={num.href}>
-                    {num.val}
-                  </NavDropdown.Item>
-                );
-              })}
-            </NavDropdown>
+            {titles.map((v, i) => {
+              return (
+                <NavDropdown title={v} id={i} key={i}>
+                  {dropdown[i].map((num, idx) => {
+                    return (
+                      <NavDropdown.Item key={idx} href={num.href}>
+                        {num.val}
+                      </NavDropdown.Item>
+                    );
+                  })}
+                </NavDropdown>
+              );
+            })}
             <Nav.Link href="/">에이블샵</Nav.Link>
             {this.getLoginState()}
           </Nav>

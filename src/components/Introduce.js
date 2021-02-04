@@ -1,6 +1,5 @@
 import { Component } from "react";
 import { Col, Row, Button } from "react-bootstrap";
-import Header from "../components/Header";
 import SlickSlider from "../components/Slider";
 import Footer from "../components/Footer";
 import "../css/Introduce.css";
@@ -9,7 +8,6 @@ export default class Introduce extends Component {
   render() {
     return (
       <div>
-        <Header />
         <SlickSlider />
         <div className="container">
           <div className="row">
@@ -27,8 +25,8 @@ export default class Introduce extends Component {
                 </p>
               </div>
               <div className="greet-image-wrapper">
-                <div className="greet-image-square"></div>
-                <div className="greet-image"></div>
+                <div className="greet-image-square" />
+                <div className="greet-image" />
               </div>
             </div>
             <div className="company-greet-wrapper">
@@ -77,7 +75,7 @@ export default class Introduce extends Component {
                         <br /> 중심에 서있다.
                         <br />
                         기업이나 공공기관에서도 정보검색 시스템,
-                        <br /> 그룹웨어 및 문서관리 시스템, 모바일 솔루션과{" "}
+                        <br /> 그룹웨어 및 문서관리 시스템, 모바일 솔루션과
                         <br />
                         서비스, 실시간 데이터 통합시스템 등에 빼놓을 수<br />{" "}
                         없는 핵심 분야다.

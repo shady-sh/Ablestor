@@ -1,4 +1,3 @@
-import Header from "../../Header";
 import { Container, Row, Col } from "react-bootstrap";
 import "../../../css/mypage/PageHeader.scss";
 
@@ -20,7 +19,6 @@ const getCurrentPage = (loc) => {
 const PageHeader = () => {
   return (
     <>
-      <Header />
       <div className="mypage-sub-header">
         <Container>
           <Row>

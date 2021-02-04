@@ -1,5 +1,4 @@
 import { Component } from "react";
-import Header from "../components/Header";
 import SlickSlider from "../components/Slider";
 import Footer from "../components/Footer";
 import "../css/Reference.css";
@@ -40,26 +39,27 @@ export default class Reference extends Component {
     ));
   addItems = () => {
     items = [];
-    category.map((item) => {
-      if (this.state.selectedContent === item.id) {
-        for (let i = 1; i <= item.maxSize; i++) {
-          if (i > item.size) {
-            items.push({ elements: <div /> });
-          } else {
-            items.push({
-              elements: (
-                <img
-                  className="img-sizing"
-                  src={`/refs/${item.file}_${i}.png`}
-                  alt={`${item.file}_${i}`}
-                />
-              ),
-            });
-          }
-        }
+    // category[this.state.selectedContent - 1].map((item) => {
+    // if (this.state.selectedContent === item.id) {
+    const item = category[this.state.selectedContent - 1];
+    for (let i = 1; i <= item.maxSize; i++) {
+      if (i > item.size) {
+        items.push({ elements: <div /> });
+      } else {
+        items.push({
+          elements: (
+            <img
+              className="img-sizing"
+              src={`/refs/${item.file}_${i}.png`}
+              alt={`${item.file}_${i}`}
+            />
+          ),
+        });
       }
-      return "";
-    });
+    }
+    // }
+    // return "";
+    // });
     return this.list_eduItems();
   };
   list_eduItems = () => {
@@ -74,7 +74,6 @@ export default class Reference extends Component {
   render() {
     return (
       <div>
-        <Header />
         <SlickSlider />
         <Container className="page--gap">
           <Row>

@@ -51,7 +51,7 @@ const Login = () => {
           }}
         >
           <div className="field">
-            <span className="fa fa-user"></span>
+            <span className="fa fa-user" />
             <input
               type="text"
               required
@@ -85,8 +85,7 @@ const Login = () => {
           {generateLink("instagram", "인스타그램")}
         </div>
         <div className="signup">
-          계정이 없으신가요?
-          <a href="/Register">회원가입</a> <br />
+          계정이 없으신가요? <a href="/Register">회원가입</a> <br />
           <a href="/">홈페이지 이동</a>
         </div>
       </div>

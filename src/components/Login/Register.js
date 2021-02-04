@@ -38,16 +38,17 @@ export default class Register extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     const { user } = this.state;
-    if (user.username && user.email && user.password && user.password_confirm) {
-      if (user.password !== user.password_confirm) {
+    const { username: name, email, password, password_confirm } = user;
+    if (name && email && password && password_confirm) {
+      if (password !== password_confirm) {
         alert("비밀번호 재입력을 올바르게 입력해주세요.");
         return;
       }
       const send_param = {
         headers,
-        name: user.username,
-        email: user.email,
-        password: user.password,
+        name,
+        email,
+        password,
       };
       axios
         .post("http://localhost:8000/member/register", send_param)
