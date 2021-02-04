@@ -127,18 +127,18 @@ const cardItems = [
 ];
 
 export default class Partner extends Component {
-  createHeader = (name, desc) => {
+  createHeader = (name, desc, key) => {
     return (
-      <header className="p-header">
+      <header className="p-header" key={key}>
         <h2>{name}</h2>
         <span>{desc}</span>
       </header>
     );
   };
-  createCard = (path, img, title, address, sub_address, phone, fax) => {
+  createCard = (path, img, title, address, sub_address, phone, fax, key) => {
     const path_url = path;
     return (
-      <Col xs={4}>
+      <Col xs={4} key={key}>
         <Card className="card-gen">
           <Card className="card-image-bg">
             <Card.Img
@@ -182,7 +182,7 @@ export default class Partner extends Component {
             {cardItems.map((v, i) => {
               return (
                 <Col xs={12} key={i}>
-                  {this.createHeader(v[0].name, v[0].desc)}
+                  {this.createHeader(v[0].name, v[0].desc, i)}
                   <CardGroup className="partner_wrapper">
                     {cardItems[i].map((items, idx) => {
                       if (idx > 0) {
@@ -193,7 +193,8 @@ export default class Partner extends Component {
                           items.address,
                           items.sub_address,
                           items.phone,
-                          items.fax
+                          items.fax,
+                          idx
                         );
                       } else {
                         return <></>;
